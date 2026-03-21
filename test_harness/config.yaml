@@ -1,0 +1,39 @@
+# Test harness configuration – bench with serial + USB + Ethernet all connected.
+#
+# Serial port names are left blank so pyserial auto-detects them.
+# On macOS the ports typically appear as:
+#   /dev/tty.usbserial-XXXXXXXX   (FTDI / CH340 UART adapters)
+#   /dev/tty.usbmodem-XXXXXXXX    (USB CDC-ACM)
+# If auto-detect picks the wrong one, set the names explicitly here.
+
+# ── Serial UART ───────────────────────────────────────────────────────────────
+serial_port:  ""          # blank = auto-detect
+serial_baud:  115200
+
+# ── USB CDC serial ────────────────────────────────────────────────────────────
+usb_serial_port:  ""      # blank = auto-detect (looks for CDC/ACM descriptor)
+usb_serial_baud:  115200
+
+# ── Network ───────────────────────────────────────────────────────────────────
+device_ip:       "192.168.100.101"
+telnet_port:     23
+http_port:       80
+network_timeout: 3.0
+
+# ── CLI behaviour ─────────────────────────────────────────────────────────────
+cli_prompt:   "> "
+cli_timeout:  3.0
+
+# Echo is per-transport: serial and USB have no device echo (the terminal
+# app provides local echo); telnet and HTTP web terminal do have device echo
+# because there is no local echo on those paths.
+serial_cli_echo:     false
+usb_serial_cli_echo: false
+telnet_cli_echo:     true
+
+# ── NTP ───────────────────────────────────────────────────────────────────────
+ntp_max_offset_sec: 10.0
+
+# ── HTTP ──────────────────────────────────────────────────────────────────────
+http_root_path:       "/"
+http_expected_status: 200

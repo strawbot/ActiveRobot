@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Test harness configuration
+#
+# Copy this file to config.yaml and edit to match your bench setup.
+# Any key omitted here falls back to the default in harness/config.py.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Serial UART ───────────────────────────────────────────────────────────────
+# Leave serial_port blank (or remove the line) to enable auto-detection.
+# Linux/macOS examples:  /dev/ttyUSB0   /dev/tty.usbserial-0001
+# Windows example:       COM3
+serial_port:  ""
+serial_baud:  115200
+
+# ── USB CDC serial ────────────────────────────────────────────────────────────
+# The second serial port exposed by the device over USB.
+# Leave blank to auto-detect.
+usb_serial_port:  ""
+usb_serial_baud:  115200
+
+# ── Network ───────────────────────────────────────────────────────────────────
+# IP address of the device (reachable via Ethernet and/or USB network adapter).
+device_ip:       "192.168.1.1"
+telnet_port:     23
+http_port:       80
+network_timeout: 3.0          # seconds for TCP connect probe
+
+# ── CLI behaviour ─────────────────────────────────────────────────────────────
+# cli_prompt: the text the device shows after each response (with trailing space)
+cli_prompt:   "> "
+cli_timeout:  3.0             # seconds to wait for a complete CLI response
+
+# Echo must be configured per-transport because it depends on whether the
+# host path provides local echo:
+#   Serial / USB  → terminal app echoes locally → device must NOT echo
+#   Telnet / HTTP → no local echo on the host    → device DOES echo
+serial_cli_echo:     false
+usb_serial_cli_echo: false
+telnet_cli_echo:     true
+
+# ── NTP ───────────────────────────────────────────────────────────────────────
+ntp_max_offset_sec: 10.0      # how far the device clock may drift from host
+
+# ── HTTP ──────────────────────────────────────────────────────────────────────
+http_root_path:      "/"
+http_expected_status: 200

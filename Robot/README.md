@@ -45,9 +45,20 @@ Robot/
 │   ├── ntp/                — SNTP time sync (depends on lwIP only)
 │   ├── telnet/             — (future) Telnet server
 │   └── http/               — (future) HTTP server
-├── diagnostics/            — (future) canary memory checker, asserts
+├── diagnostics/            — health-monitoring and debug aids
+│   └── canary/             — stack overflow detection (4-state OK/WARN/
+│                              OVERFLOW/CRITICAL with high-water mark)
 └── robot/                  — (future) limb sensing & control algorithms
 ```
+
+## Linker-symbol contracts
+
+Some Robot modules need linker-defined symbols.  Every adopting board's
+`.ld` script must export them — usually a one-line addition.
+
+| Module | Required symbols | If your linker only has _ebss |
+|--------|------------------|-------------------------------|
+| `diagnostics/canary` | `_sstack`, `_estack`, `_Min_Stack_Size` | Add `_sstack = _ebss;` immediately after `_ebss = .;` in the .bss section |
 
 ## Extracting a new feature into Robot/ — checklist
 
@@ -62,12 +73,20 @@ Using NTP as the worked example, the steps are:
 7. One-time per board: add `../Robot/` as a linked source folder in STM32CubeIDE
    so `subdir.mk` picks it up on regeneration.
 
+## Adoption status
+
+| Module | Discovery | Nucleo411 | Nucleo446 | PNucleo | Nano |
+|--------|:---------:|:---------:|:---------:|:-------:|:----:|
+| `net/ntp` | adopted | — | — | — | — |
+| `diagnostics/canary` | adopted | adopted | adopted | adopted | adopted |
+
 ## Next candidates for extraction
 
-In priority order, once the NTP pattern is validated:
+In priority order, now that the canary pattern is validated across two boards:
 
-1. Canary memory checker (smallest, lowest risk).
-2. Telnet server (uses the same lwIP-above-transport pattern as NTP).
-3. HTTP server (largest surface; extract after Telnet proves the pattern for TCP).
-4. Limb sensing / control (different domain — will need a sensor/actuator
+1. Telnet server (uses the same lwIP-above-transport pattern as NTP).
+2. HTTP server (largest surface; extract after Telnet proves the pattern for TCP).
+3. Limb sensing / control (different domain — will need a sensor/actuator
    abstraction, not just a transport abstraction).
+4. Adopt `net/ntp` on a second board (Nucleo446 or PNucleo) to mirror the
+   canary cross-board validation.

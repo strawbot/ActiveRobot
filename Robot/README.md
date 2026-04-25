@@ -43,7 +43,7 @@ Robot/
 ├── README.md               — this file
 ├── net/                    — board-agnostic networking features
 │   ├── ntp/                — SNTP time sync (depends on lwIP only)
-│   ├── telnet/             — (future) Telnet server
+│   ├── telnet/             — Telnet server (lwIP raw TCP, port 23)
 │   └── http/               — (future) HTTP server
 ├── diagnostics/            — health-monitoring and debug aids
 │   └── canary/             — stack overflow detection (4-state OK/WARN/
@@ -78,15 +78,15 @@ Using NTP as the worked example, the steps are:
 | Module | Discovery | Nucleo411 | Nucleo446 | PNucleo | Nano |
 |--------|:---------:|:---------:|:---------:|:-------:|:----:|
 | `net/ntp` | adopted | — | — | — | — |
+| `net/telnet` | adopted | — | — | — | — |
 | `diagnostics/canary` | adopted | adopted | adopted | adopted | adopted |
 
 ## Next candidates for extraction
 
-In priority order, now that the canary pattern is validated across two boards:
+In priority order:
 
-1. Telnet server (uses the same lwIP-above-transport pattern as NTP).
-2. HTTP server (largest surface; extract after Telnet proves the pattern for TCP).
-3. Limb sensing / control (different domain — will need a sensor/actuator
+1. HTTP server (largest surface; Telnet validates the raw TCP pattern).
+2. Limb sensing / control (different domain — will need a sensor/actuator
    abstraction, not just a transport abstraction).
-4. Adopt `net/ntp` on a second board (Nucleo446 or PNucleo) to mirror the
-   canary cross-board validation.
+3. Adopt `net/ntp` and `net/telnet` on a second board (Nucleo446 or PNucleo)
+   to mirror the canary cross-board validation.

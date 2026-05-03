@@ -44,7 +44,7 @@ Robot/
 ├── net/                    — board-agnostic networking features
 │   ├── ntp/                — SNTP time sync (depends on lwIP only)
 │   ├── telnet/             — Telnet server (lwIP raw TCP, port 23)
-│   └── http/               — (future) HTTP server
+│   └── http/               — HTTP/1.0 server (fixed pool, SSE registry, terminal stream)
 ├── diagnostics/            — health-monitoring and debug aids
 │   └── canary/             — stack overflow detection (4-state OK/WARN/
 │                              OVERFLOW/CRITICAL with high-water mark)
@@ -79,14 +79,14 @@ Using NTP as the worked example, the steps are:
 |--------|:---------:|:---------:|:---------:|:-------:|:----:|
 | `net/ntp` | adopted | — | — | — | — |
 | `net/telnet` | adopted | — | — | — | — |
+| `net/http` | adopted | — | — | — | — |
 | `diagnostics/canary` | adopted | adopted | adopted | adopted | adopted |
 
 ## Next candidates for extraction
 
 In priority order:
 
-1. HTTP server (largest surface; Telnet validates the raw TCP pattern).
-2. Limb sensing / control (different domain — will need a sensor/actuator
+1. Limb sensing / control (different domain — will need a sensor/actuator
    abstraction, not just a transport abstraction).
-3. Adopt `net/ntp` and `net/telnet` on a second board (Nucleo446 or PNucleo)
-   to mirror the canary cross-board validation.
+2. Adopt `net/ntp`, `net/telnet`, and `net/http` on a second board (Nucleo446
+   or PNucleo) to validate cross-board portability.

@@ -128,6 +128,93 @@ Board-specific diagnostic words (e.g. `show-eth` that reads the STM32 MAC,
 `show-pins` that dumps a Renesas port) stay in the board folder and use the
 same `cli_register(...)` API. They must not be added to Robot.
 
+## Per-instance vs module-level callbacks
+
+The "init + register" pattern above describes *module-level* observer lists —
+one fixed-capacity array shared across all users of a module (e.g.
+`ntp_on_sync(cb)`).
+
+When a module manages multiple independent instances of a resource (e.g. SSE
+channels in `net/http`), use a **per-instance callback field** instead:
+
+```c
+// In the Robot header, embed the hook directly in the instance struct:
+typedef struct {
+    struct tcp_pcb *pcb;        // managed by the engine
+    void (*on_connect)(void);   // board supplies; called by engine on connect
+} http_sse_chan_t;
+```
+
+The board sets the field before registering the instance:
+
+```c
+// In board init (http_streams.c):
+status_chan.on_connect = status_sse_connected;
+http_sse_bind("/status_stream", &status_chan);
+```
+
+The engine calls it without knowing what it does:
+
+```c
+if (ch->on_connect) ch->on_connect();
+```
+
+**When to use each form:**
+
+| Form | Use when |
+|------|----------|
+| Module-level observer list | The event is global to the module (e.g. "NTP synced") and multiple boards may register different handlers. |
+| Per-instance callback field | The event is specific to one instance of a resource (e.g. "this SSE channel just got a client") and each instance may need a different response. |
+
+Mixing the two in one module is fine. The field may be NULL — always check
+before calling.
+
+## No heap in Robot
+
+Robot modules must not allocate from the heap. This means:
+
+- No `mem_malloc` / `malloc` / `calloc` — not even lwIP's `mem_malloc`.
+- Connection pools and observer lists are **fixed-capacity static arrays**
+  sized at compile time.
+- The canary diagnostic (`Robot/diagnostics/canary`) will flag unexpected
+  heap use. If the canary fires on code that should be heap-free, search for
+  `mem_malloc` — it is easy to carry over from a board-layer prototype.
+
+The correct pattern for connection pools (established by `net/http`):
+
+```c
+static http_conn_t conns[HTTP_MAX_CONNECTIONS];  // fixed, in BSS
+
+static http_conn_t *conn_alloc(void) {
+    for (int i = 0; i < HTTP_MAX_CONNECTIONS; i++)
+        if (conns[i].state == IDLE) return &conns[i];
+    return NULL;
+}
+
+static void conn_free(http_conn_t *c) {
+    c->state = IDLE;   /* slot returned to pool */
+}
+```
+
+`conn_alloc` returns NULL when the pool is exhausted; the caller must handle
+that (e.g. `tcp_abort` the new PCB).
+
+## Splitting a board module into Robot engine + board application
+
+When a board module is too large to move as a unit, split it:
+
+- The **Robot engine** owns the generic mechanism (protocol, state machine,
+  resource lifecycle). It exposes a registration API so boards can supply
+  routes, callbacks, and data without the engine needing to know them.
+- The **board application layer** owns all domain knowledge (JSON builders,
+  hardware queries, specific routes). It calls the engine's registration API
+  from a board-side `*_init()` function.
+
+Naming: if the board application file would collide with the Robot engine
+file (same header name on the flat include path), give the board file a
+distinct name (e.g. `http_streams.h` alongside `http_server.h`) and update
+all board-side callers. The Robot header is the canonical name; it wins.
+
 ## When adding a new feature to Robot
 
 Use the canary and NTP modules as templates. Before moving code into

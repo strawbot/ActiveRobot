@@ -23,9 +23,9 @@
 // Every adopting board must export these three.  See canary.h for guidance
 // on boards whose .ld script exports _ebss but not _sstack.
 
-extern uint32_t _sstack;          // bottom of free RAM (end of BSS)
-extern uint32_t _estack;          // top of RAM / initial SP
-extern uint32_t _Min_Stack_Size;  // configured stack budget (bytes)
+extern uint32_t _sstack[];         // bottom of free RAM (end of BSS)
+extern uint32_t _estack[];         // top of RAM / initial SP
+extern uint32_t _Min_Stack_Size[]; // configured stack budget (bytes)
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -41,7 +41,7 @@ void stack_canary_init(void)
 {
     uint32_t sp;
     __asm volatile ("mov %0, sp" : "=r" (sp));
-    volatile uint32_t *p     = (volatile uint32_t *)&_sstack;
+    volatile uint32_t *p     = (volatile uint32_t *)_sstack;
     volatile uint32_t *limit = (volatile uint32_t *)(sp - INIT_SP_MARGIN_BYTES);
     while (p < limit) *p++ = CANARY_WORD;
 }
@@ -49,11 +49,11 @@ void stack_canary_init(void)
 stack_info_t stack_check(void)
 {
     stack_info_t si;
-    si.limit     = (uint32_t)&_Min_Stack_Size;
+    si.limit     = (uint32_t)_Min_Stack_Size;
     si.incursion = 0;
 
-    volatile uint32_t *bot = (volatile uint32_t *)&_sstack;
-    volatile uint32_t *top = (volatile uint32_t *)&_estack;
+    volatile uint32_t *bot = (volatile uint32_t *)_sstack;
+    volatile uint32_t *top = (volatile uint32_t *)_estack;
     volatile uint32_t *p   = bot;
 
     if (p[0] == CANARY_WORD && p[1] == CANARY_WORD) {
@@ -103,7 +103,7 @@ void stack_render(stack_info_t si)
         print("OVERFLOW  "); printDec(si.incursion); print("B into BSS");
         print("  hwm="); printDec(si.hwm);
         print("/"); printDec(si.limit); print(" B");
-        pdump((Byte *)&_sstack, si.incursion < 40u ? si.incursion : 40u);
+        pdump((Byte *)_sstack, si.incursion < 40u ? si.incursion : 40u);
         break;
     case STACK_CRITICAL:
         print("CRITICAL  stack consumed all free RAM");

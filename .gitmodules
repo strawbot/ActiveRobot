@@ -19,3 +19,6 @@
 [submodule "board-Nucleo446"]
 	path = board-Nucleo446
 	url = git@github.com:strawbot/board-Nucleo446.git
+[submodule "tinyusb"]
+	path = tinyusb
+	url = https://github.com/hathach/tinyusb.git

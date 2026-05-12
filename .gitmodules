@@ -1,0 +1,21 @@
+[submodule "TimbreOS"]
+	path = TimbreOS
+	url = git@github.com:strawbot/TimbreOS.git
+[submodule "board-Tiva"]
+	path = board-Tiva
+	url = git@github.com:strawbot/board-Tiva.git
+[submodule "board-NanoR4"]
+	path = board-NanoR4
+	url = git@github.com:strawbot/board-NanoR4.git
+[submodule "board-Discovery"]
+	path = board-Discovery
+	url = git@github.com:strawbot/board-Discovery.git
+[submodule "board-PNucleo"]
+	path = board-PNucleo
+	url = git@github.com:strawbot/board-PNucleo.git
+[submodule "board-Nucleo411"]
+	path = board-Nucleo411
+	url = git@github.com:strawbot/board-Nucleo411.git
+[submodule "board-Nucleo446"]
+	path = board-Nucleo446
+	url = git@github.com:strawbot/board-Nucleo446.git

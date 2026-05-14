@@ -95,6 +95,10 @@ When factoring the existing duplicated trees out of `Discovery/LWIP/` and
 Any new lwIP-using feature (Telnet, HTTP, etc.) lives in `Robot/net/<feature>/`
 and depends only on the lwIP API — never on the board's port directly.
 
+Every board port that enables SNTP or DNS must also define `LWIP_RAND()` in
+its `lwipopts.h` — see the "Hidden heap use" note in the **No heap in Robot**
+section below.
+
 ## CLI words and common diagnostics
 
 Diagnostics that ask only TimbreOS/Robot questions belong in `Robot/`:
@@ -179,6 +183,38 @@ Robot modules must not allocate from the heap. This means:
 - The canary diagnostic (`Robot/diagnostics/canary`) will flag unexpected
   heap use. If the canary fires on code that should be heap-free, search for
   `mem_malloc` — it is easy to carry over from a board-layer prototype.
+
+### Hidden heap use: lwIP SNTP and DNS call `rand()`
+
+`sntp.c` and `dns.c` both call the C library `rand()`. Under newlib-nano,
+`rand()` lazily allocates 24 bytes via `malloc` on its first call (to hold
+reentrant state), which grows the heap by 32 bytes (24 data + 8-byte chunk
+header). On a no-heap board this overwrites the canary region immediately
+above BSS and the canary will report a 32-byte incursion.
+
+**Fix required in every board port that enables SNTP or DNS:** define
+`LWIP_RAND()` in `lwipopts.h` to point to a malloc-free PRNG implemented
+in the board's lwIP port (e.g. `ethernetif.c`). A simple xorshift32 is
+sufficient:
+
+```c
+/* in lwipopts.h */
+extern unsigned int lwip_rand(void);
+#define LWIP_RAND() lwip_rand()
+
+/* in ethernetif.c */
+u32_t lwip_rand(void) {
+    static u32_t state = 0xDEADBEEFu;
+    state ^= state << 13;
+    state ^= state >> 17;
+    state ^= state << 5;
+    return state;
+}
+```
+
+Without this override, `LWIP_RAND()` falls back to `rand()` (see
+`Robot/net/lwip/src/include/lwip/opt.h`) and the canary will fire on the
+first SNTP or DNS transaction.
 
 The correct pattern for connection pools (established by `net/http`):
 

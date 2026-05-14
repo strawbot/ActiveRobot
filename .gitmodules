@@ -22,3 +22,6 @@
 [submodule "tinyusb"]
 	path = tinyusb
 	url = https://github.com/hathach/tinyusb.git
+[submodule "Robot/net/lwip"]
+	path = Robot/net/lwip
+	url = git@github.com:lwip-tcpip/lwip.git

@@ -48,6 +48,8 @@ Robot/
 ├── diagnostics/            — health-monitoring and debug aids
 │   └── canary/             — stack overflow detection (4-state OK/WARN/
 │                              OVERFLOW/CRITICAL with high-water mark)
+├── io/                     — chip-level drivers behind a *_bind_hw() shim
+│   └── ad5593r/            — AD5593R 8-ch configurable ADC/DAC (I2C)
 └── robot/                  — (future) limb sensing & control algorithms
 ```
 
@@ -81,6 +83,7 @@ Using NTP as the worked example, the steps are:
 | `net/telnet` | adopted | — | — | — | — |
 | `net/http` | adopted | — | — | — | — |
 | `diagnostics/canary` | adopted | adopted | adopted | adopted | adopted |
+| `io/ad5593r` | — | — | — | — | adopted |
 
 ## Next candidates for extraction
 

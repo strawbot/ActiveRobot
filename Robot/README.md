@@ -49,7 +49,9 @@ Robot/
 │   └── canary/             — stack overflow detection (4-state OK/WARN/
 │                              OVERFLOW/CRITICAL with high-water mark)
 ├── io/                     — chip-level drivers behind a *_bind_hw() shim
-│   └── ad5593r/            — AD5593R 8-ch configurable ADC/DAC (I2C)
+│   ├── ads1015/            — ADS1015 4-ch single-ended 12-bit ADC (I2C)
+│   ├── mcp4728/            — MCP4728 4-ch 12-bit DAC w/ EEPROM (I2C)
+│   └── mpu6050/            — MPU-6050 6-DOF accel+gyro (I2C)
 └── robot/                  — (future) limb sensing & control algorithms
 ```
 
@@ -83,7 +85,9 @@ Using NTP as the worked example, the steps are:
 | `net/telnet` | adopted | — | — | — | — |
 | `net/http` | adopted | — | — | — | — |
 | `diagnostics/canary` | adopted | adopted | adopted | adopted | adopted |
-| `io/ad5593r` | — | — | — | — | adopted |
+| `io/ads1015` | — | — | — | — | adopted |
+| `io/mcp4728` | — | — | — | — | adopted |
+| `io/mpu6050` | — | — | — | — | adopted |
 
 ## Next candidates for extraction
 

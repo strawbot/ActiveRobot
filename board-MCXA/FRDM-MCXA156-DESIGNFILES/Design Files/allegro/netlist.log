@@ -1,0 +1,22 @@
+{ Using PSTWRITER 17.4.0 d001Jun-13-2024 at 17:34:13 }
+
+#1 WARNING(ORCAP-36049): Ignoring following Component Definition properties since they also exists as Component Instance properties in Q:\Data\CDS_SITE\allegro.cfg.
+              ASSY_OPT , BOM_IGNORE
+#2 WARNING(ORCAP-36038): "No_connect" property on Pin "U3.M6" ignored for U3: FRDM-MCXA156, 05 MCU_LINK_USB (10.90, 6.50). Connecting pin to net "FL_USB1_DP".
+#3 WARNING(ORCAP-36038): "No_connect" property on Pin "U3.N6" ignored for U3: FRDM-MCXA156, 05 MCU_LINK_USB (10.90, 6.50). Connecting pin to net "FL_USB1_DM".
+#4 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.17" ignored for J2: FRDM-MCXA156, 08 HEADERS (4.88, 5.75). Connecting pin to net "P2_3".
+#5 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.13" ignored for J2: FRDM-MCXA156, 08 HEADERS (4.88, 5.75). Connecting pin to net "P2_5".
+#6 WARNING(ORCAP-36038): "No_connect" property on Pin "U3.H9" ignored for U3: FRDM-MCXA156, 05 MCU_LINK_USB (15.58, 5.04). Connecting pin to net "HW_VER_6".
+#7 WARNING(ORCAP-36038): "No_connect" property on Pin "U3.N2" ignored for U3: FRDM-MCXA156, 05 MCU_LINK_USB (15.58, 5.04). Connecting pin to net "HW_VER_7".
+#8 WARNING(ORCAP-36038): "No_connect" property on Pin "J2.15" ignored for J2: FRDM-MCXA156, 08 HEADERS (4.88, 5.75). Connecting pin to net "P2_6".
+#9 WARNING(ORCAP-36038): "No_connect" property on Pin "U3.F9" ignored for U3: FRDM-MCXA156, 05 MCU_LINK_USB (15.58, 5.04). Connecting pin to net "HW_VER_2".
+INFO(ORCAP-36080): Scanning netlist files ...
+
+Loading... C:\2023WORKOK\A18\A085_20240405\UPDATE\allegro\pstchip.dat
+
+Loading... C:\2023WORKOK\A18\A085_20240405\UPDATE\allegro\pstchip.dat
+
+Loading... C:\2023WORKOK\A18\A085_20240405\UPDATE\allegro\pstxprt.dat
+
+Loading... C:\2023WORKOK\A18\A085_20240405\UPDATE\allegro\pstxnet.dat
+packaging the design view...

@@ -1,0 +1,133 @@
+
+(rules PCB shoestring_driver
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 3928)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 3.0)
+    )
+    (layer_rule In1.Cu
+      (active off)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.8)
+    )
+    (layer_rule In2.Cu
+      (active off)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.2)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.8)
+      (against_preferred_direction_trace_costs 2.6)
+    )
+  )
+  (rule
+    (width 200.0)
+    (clearance 200.0)
+    (clearance 100.0 (type smd_to_turn_gap))
+    (clearance 200.0 (type smd))
+    (clearance 200.0 (type "kicad_default"))
+    (clearance 200.0 (type kicad))
+  )
+  (padstack "Via[0-3]_600:300_um"
+    (shape
+      (circle F.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 600.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-3]_500:300_um"
+    (shape
+      (circle F.Cu 500.0 0.0 0.0)
+    )
+    (shape
+      (circle In1.Cu 500.0 0.0 0.0)
+    )
+    (shape
+      (circle In2.Cu 500.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 500.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-3]_600:300_um" "Via[0-3]_600:300_um" default
+  )
+  (via 
+    "Via[0-3]_500:300_um" "Via[0-3]_500:300_um" default
+  )
+  (via 
+    "Via[0-3]_600:300_um-kicad_default" "Via[0-3]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-3]_500:300_um-kicad_default" "Via[0-3]_500:300_um" "kicad_default"
+  )
+  (via_rule
+    default "Via[0-3]_500:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-3]_600:300_um-kicad_default"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    GND +5V "L3_SNS3" "L1_LED" "L1_RESET" "L4_FB1" "L4_SNS1" "L4_SNS3"
+    SEL2 "L2_LED" "L3_GATE1" "L4_GATE1" "L2_FB2" "L2_SNS2" "L1_OUT4" "L1_GATE4"
+    "L2_FB1" "L2_SNS1" +10V "L4_DRAIN3" SCL "L4_ADC1" "L4_ADC2" "L4_ADC3"
+    "L4_ADC4" SDA "L2_OUT3" "L2_FB3" "L2_DRAIN4" "L2_DRAIN3" "L2_DRAIN2" "L2_DRAIN1"
+    "L4_OUT1" "L2_ADC3" "L1_DRAIN4" "L2_GATE1" "L3_DRAIN3" "L2_OUT2" "L2_GATE2" "L2_OUT1"
+    "L2_ADC1" "L3_OUT4" "L3_ADC4" "L3_GATE3" "L2_RESET" "L2_SET4" "L2_SET3" "L2_SET2"
+    "L2_SET1" "L3_GATE4" "L4_DRAIN4" "L4_DRAIN2" "L4_DRAIN1" "L3_DRAIN2" "IMU_INT" "L3_OUT3"
+    "L3_ADC3" "L4_OUT4" "L4_FB4" "L3_GATE2" "L3_SNS2" "L4_GATE4" "L3_RESET" "L2_GATE3"
+    "L1_DRAIN1" "L1_DRAIN2" "L1_DRAIN3" "L3_DRAIN4" "L2_FB4" "L2_SNS4" "L1_OUT2" "L1_ADC2"
+    "L1_GATE1" "L2_ADC2" "L2_ADC4" "L3_FB4" "L3_SNS4" "L4_OUT2" "L4_GATE2" "L3_OUT1"
+    "L4_GATE3" "L4_SNS4" "L1_OUT3" "L1_GATE3" "L4_FB3" "L4_OUT3" "L4_SET3" "L4_SET4"
+    SEL3 "L3_SET4" "L3_SET3" "L3_SET2" "L3_SET1" "L4_SNS2" "L1_FB2" "L3_OUT2"
+    "L3_FB2" "L2_OUT4" "L2_GATE4" "L1_SNS4" "L1_SNS1" "L1_OUT1" "L1_ADC1" "L1_SNS3"
+    "L4_FB2" "L4_RESET" "L3_FB1" "L3_SNS1" "L3_DRAIN1" "L1_ADC3" "L1_ADC4" "L4_LED"
+    "L2_SNS3" "L1_GATE2" "L3_FB3" "L1_FB3" "L1_FB4" SEL4 "L1_FB1" "L3_ADC1"
+    "L1_SNS2" "L1_SET4" "L1_SET3" "L3_ADC2" "L4_SET2" "L4_SET1" SEL1 "BT_TX"
+    "BT_RX" "L3_LED" "L1_SET2" "L1_SET1"
+    (clearance_class "kicad_default")
+    (via_rule "kicad_default")
+    (rule
+      (width 200.0)
+    )
+    (circuit 
+      (use_layer F.Cu In1.Cu In2.Cu B.Cu)
+    )
+  )
+)

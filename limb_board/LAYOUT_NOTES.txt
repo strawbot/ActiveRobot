@@ -1,0 +1,338 @@
+PCB LAYOUT STATUS — muscle_wire_driver.kicad_pcb
+==================================================================
+
+UPDATE 2026-07-16: 70x70 mm RESCALE — muscle_wire_driver_70x70.kicad_pcb
+------------------------------------------------------------------------
+The strip design below was reworked onto a 70 x 70 mm board (4 limb
+channels, same schematic/netlist — original strip file left untouched).
+
+- Outline (10,10)-(80,80); 4x M2.5 NPTH mounting holes at corners.
+- Floor plan: J1 left edge center | support cluster + U1 | two channel
+  rows: ch1 | U2 | ch2 (y=30) and ch3 | U3 | ch4 (y=60), opamp BETWEEN
+  its two channels per the plan below — feedback-part congestion gone.
+  J2 right edge center; drains fan to it at 0.6 mm.
+- Fully routed: all 37 nets, 553 segments, 135 vias (incl. ~70 GND
+  stitching vias on a 7 mm grid). +10V at 0.8 mm, VCC/GND 0.4 mm,
+  drains 0.6 mm, signals 0.25 mm. SET/ADC runs mostly B.Cu; F.Cu keeps
+  power + local channel wiring. C4/C5 at U2/U3 VCC pins, C3 at VREF pin 8.
+- GND: explicit tracks connect every GND pad (verified without zone
+  credit) + full-board GND zones on both layers, UNFILLED in file.
+- Verified programmatically: every net one connected component; all
+  inter-net copper clearances >= 0.2 mm (JLC 2 oz rules).
+- Preview: board_70x70_preview.png (red F.Cu / blue B.Cu / grey vias).
+
+REMAINING (in KiCad, ~10 min):
+1. Open muscle_wire_driver_70x70.kicad_pcb (rename over the original
+   .kicad_pcb if you want schematic cross-probing in the project).
+2. Refill zones (B), run DRC — expect clean; silkscreen refs may want
+   cosmetic nudging.
+3. File > Fabrication Outputs > Gerbers + drill; Fabrication Toolkit
+   for JLC BOM/CPL. 0.8 mm no longer required — 1.6 mm fine at 70x70.
+Note: straw/tube constraints (8.6 mm width, SOD-123 low profile, board
+stack height) no longer apply at this form factor.
+
+ORIGINAL STRIP (71 x 8.6 mm) NOTES BELOW
+==================================================================
+
+WHAT IS DONE AND VERIFIED
+- Board outline 71 x 8.6 mm (fits 10 mm ID tube: sqrt(8.6^2 + 3.7^2) = 9.4 mm
+  diagonal at the connector, less elsewhere).
+- All 53 footprints placed (genuine KiCad library footprints), every pad
+  assigned to the correct net from the schematic. Placement follows the strip
+  floor plan: J1 (SH-6, cable exits left) | support | AD5593R | MCP6002 |
+  ch1 | ch2 | MCP6002 | ch3 | ch4 | J2 (SH-4, exits right).
+- GND zones on both layers (thermal relief, island control), design rules
+  set for JLCPCB 2 oz: 0.2 clearance / 0.25 track / 0.6-0.3 via.
+- Scaffold routing that survived DRC pruning: +10V lane (y=8.15) with diode
+  cathode stubs, VCC lane/trunk, part of the B.Cu signal bus, GND stitching.
+- J1/J2 mounting-tab pads trimmed/pulled inboard 0.35 mm to fit the 8.6 mm
+  width (housing tabs still land mostly on pad — note for assembly review).
+
+WHAT REMAINS
+- ~35 local connections (FB/OUT/GATE/SNS per channel, SDA/SCL/A0/RESET/VREF/
+  LED at the left end) plus re-adding pruned bus segments.
+- KNOWN ISSUE: the channel blocks are packed too tightly for the feedback
+  parts (R_i1/C_i1) — several pad-to-pad clearances < 0.2 mm around the
+  opamps. Track routing cannot fix these; parts must move.
+
+RECOMMENDED COMPLETION PATH (interactive, ~1-2 h in KiCad)
+1. Stretch the board to ~76-79 mm (length is free inside the straw) and
+   re-space: give each channel block ~9 mm pitch, or better, place each
+   MCP6002 BETWEEN its two channels (rot 0: pins 1-3 face west to the odd
+   channel, pins 5-7 east to the even channel) — this removes all feedback-
+   part congestion.
+   Alternative that keeps 71 mm: put R_i1/C_i1 on the BACK side under each
+   opamp (stack becomes 0.8+1.75+0.55 = 3.1 mm; diagonal 9.14 mm still fits).
+   JLC does 2-sided assembly, or hand-solder 8 rear 0603s.
+2. Route with these embedded conventions (already partly in the file):
+   - B.Cu bus corridor y 0.7-3.5: SET1-4 on y 0.7/1.1/1.5/1.9 (deepest lane
+     gets the westmost riser at U1 so risers never cross lanes);
+     ADC1-4 on y 3.5/3.1/2.7/2.3 (shallowest lane to the westmost channel,
+     same non-crossing rule; riser order at U1 east side: ADC4,3,2,1).
+   - DRAIN1-4 on B.Cu y 6.8-8.0 (or 5.35-6.55 if fb parts stay front),
+     0.4 mm width, via down at x = BX+2.74 per channel, fan to J2 at the
+     right end with nested staggered verticals.
+   - +10V stays the F.Cu lane at y 8.15; VCC lane y 0.45 + vertical trunk
+     through the U2 body gap; GND entirely by pours + stitching vias
+     (stitch only at y~4.3 between blocks — never inside the bus corridor).
+   - Keep DAC (SETx) traces on the far side of the board from the drain
+     switching; VREF cap C3 ties directly to U1 pin 8.
+3. Refill zones, run DRC, fix stragglers, then:
+   - File > Fabrication Outputs > Gerbers + drill (JLC 2-layer, 2 oz, 0.8 mm)
+   - Fabrication Toolkit plugin > one-click JLC BOM + CPL.
+
+ELECTRICAL NOTES CARRIED INTO LAYOUT
+- 2 oz copper, back layer = heat spreader: flood drain pads, generous pour.
+- Sense resistor grounds: short, direct to pour with adjacent stitching via.
+- Worst case 2 x 0.58 W (antagonistic pairs, held mid-current) — spreader
+  sized for this; PWM-assist firmware removes it entirely if needed.
+
+UPDATE 2026-07-20: 4-LIMB BOARD — muscle_wire_driver_4limb.kicad_pcb
+------------------------------------------------------------------------
+70 x 88 mm, 2 layer, 2 oz. FOUR complete limb drivers (16 SMA channels),
+Arduino Nano R4 socket, MPU6050 header, single 10V/GND power tether.
+
+- Limb strips L1-L4 (top to bottom), each = AD5593R + 2x MCP6002 +
+  4x IRLML6344 + flybacks/sense, JST-SH-4 actuator connector at LEFT edge
+  (J101/J201/J301/J401, wires exit left). In-use LED per limb.
+- A1 = Arduino Nano R4 socket (2x15 x 2.54mm, USB faces RIGHT edge).
+  Used pins: VIN <- +10V, 5V -> VCC rail, GND x2, A4/A5 = shared I2C,
+  D2-D5 = SEL1-4 (one per limb), D6 = MPU6050 INT (all RA4M1 digital
+  pins support attachInterrupt).
+- J1 = 10V/GND screw terminal (right edge): powers muscle wires AND the
+  Nano via VIN -> autonomous operation needs only this one tether.
+- J2 = 1x5 header for MPU6050 breakout (GND, VCC, SDA, SCL, INT).
+- I2C addressing/select: all four AD5593R share one bus. Each A0 is
+  pulled low (0x10, idle) via R{i}04; drive its SEL line HIGH -> chip
+  moves to 0x11 AND its LED lights. Talk to 0x11 only while exactly one
+  SEL is high. R900/R901 = single 4.7k bus pullup pair.
+- IMPORTANT - AD5593R I/O pin mapping differs from the single-limb
+  schematic (chosen for routability; I/O roles are register-configured):
+    I/O0=SET3  I/O1=ADC3  I/O2=SET2  I/O3=SET1
+    I/O4=ADC4  I/O5=SET4  I/O6=ADC2  I/O7=ADC1
+  => DAC_CONFIG (0x05) = 0x002D, ADC_CONFIG (0x04) = 0x00D2.
+  Firmware map per limb: SET[1..4] = I/O 3,2,0,5; ADC[1..4] = I/O 7,6,1,4.
+- Verified programmatically: all 133 signal nets single connected
+  component (explicit copper), all clearances >= 0.2 mm. GND connects by
+  full-board pours both layers (unfilled in file - press B in KiCad)
+  plus ~42 stitching vias; decoupling grounds use thermal-relief pour
+  connection (normal practice).
+- Remaining in KiCad: refill zones, DRC, silkscreen tidy-up, fab outputs.
+  Schematic file not regenerated - the PCB netlist is authoritative;
+  redraw as hierarchical sheet x4 if schematic needed.
+- Power budget: <=2 limbs' antagonistic pairs active => worst ~2.2 A on
+  10V input; 0.6-0.8 mm rails at 2 oz OK. Nano 5V regulator load ~40 mA.
+
+UPDATE 2026-07-20 (rev B): mechanical clearance fixes after 3D review
+- J1 (10V terminal) moved from right edge to LEFT edge (13.2, 87.5),
+  wires exit west alongside the actuator cables. The right-edge zone in
+  front of the Nano USB connector is now completely clear (~9.6 mm to
+  board edge, cable overhangs freely).
+- J2 (MPU6050 header) moved to bottom-left (pads y=95.2, x 12.7-22.9),
+  side-by-side with the Nano socket bottom row (~0.5 mm body gap, both
+  insert vertically - no interference). Breakout board sits above
+  socket height.
+- Mounting holes now 3x M2.5 (bottom-left corner hosts J2).
+- All affected nets rerouted; re-verified: all signal nets connected,
+  clearances >= 0.2 mm.
+
+UPDATE 2026-07-20 (rev C): MPU6050 socket redone with real module dims
+- The common MPU6050 breakout (GY-521) is a 21.2 x 16.4 mm board with a
+  1x8 header row along its long edge. The previous horizontal 5-pin
+  placement would have stood that 21.2 mm plate across the Nano and J1.
+- J2 is now a 1x8 vertical column at x=19.5 (y 78.5..96.3) with the
+  exact GY-521 pin order: VCC GND SCL SDA XDA XCL AD0 INT (XDA/XCL/AD0
+  unconnected). The plate stands parallel to the left board edge:
+  ~3.1 mm clear of the J1 terminal body, ~3.4 mm clear of the Nano PCB
+  edge, module components face west.
+- Nano R4 true physical envelope added (45 x 18 mm PCB - extends one
+  pin-pitch past the TX1/VIN pads - plus USB-C shell overhang). Drawn
+  on Dwgs.User in the PCB and in yellow on board_4limb_preview.png,
+  together with the GY-521 plate strip and J1 body.
+- Affected nets rerouted; re-verified: all signal nets connected,
+  clearances >= 0.2 mm.
+
+UPDATE 2026-07-20 (rev D): J2 matched to DFRobot SEN0142 (DigiKey 1738-1070-ND)
+- MPU6050 module = DFRobot Fermion SEN0142: 14 x 21 mm, 1x5 header on
+  the 14 mm edge, pin order VCC GND SCL SDA INT (confirmed from the
+  DFRobot layout file). J2 is now that exact 1x5 vertical column at
+  x=19.5, y 82.3..92.46 - the module plugs straight in, standing
+  parallel to the left edge (14 mm plan footprint, 21 mm tall).
+- Clearances: ~3.1 mm to J1 terminal body, ~3.4 mm to Nano R4 PCB edge.
+- Physical envelopes on Dwgs.User + preview updated. Nets rerouted and
+  re-verified clean (all connected, >= 0.2 mm).
+
+UPDATE 2026-07-20 (rev E): SEN0142 mounting plan + Nano geometry fix
+- SEN0142 mounts in a 1x5 FEMALE socket header at J2 (x=19.5 column).
+  With its straight soldered pins it sits HORIZONTAL at socket height,
+  board extending east over the PCB (low parts R900/R901 only below it).
+- Nano R4 socket shifted EAST: west pads (VIN/TX1) now at x=37.8 ->
+  18.3 mm from the J2 pin row (user-measured requirement: 18 mm).
+- Nano physical outline corrected: pads sit 5.08 mm from the WEST board
+  edge; the long overhang is at the USB (east) end. Board outline now
+  x 32.72..77.72; USB-C shell lands at the board edge (x~79.3), cable
+  overhangs freely.
+- NOTE: SEN0142 tip region (x up to ~37.5) passes at/under the Nano's
+  west PCB overhang (from x 32.72) - clearance verified by physical
+  measurement of both boards; heights differ by the Nano header spacer.
+- NOTE: mounting hole at (76.5, 95.8) sits under the elevated Nano east
+  end - install that screw before seating the Nano.
+- All Nano/J2 nets rerouted; re-verified clean (connected, >= 0.2 mm).
+
+UPDATE 2026-07-20 (rev F): 4th mounting hole restored
+- Bottom-left M2.5 hole added at (13.0, 95.3) - the corner freed up when
+  J2 became a vertical column. Clear of J1 body, J2 pads, and outside
+  the SEN0142 overhang (screw head accessible with module installed).
+  Board is back to 4 corner holes. Affected nets rerouted; verified
+  clean, no copper within the hole keepout.
+- (rev F addendum) SEN0142 envelope orientation corrected: the 5-pin
+  row is on the module's 21 mm edge, so the plate spans 21 mm along the
+  J2 column (y 76.9..97.9) and extends 14 mm east (to x=32.0) - 0.7 mm
+  plan clearance to the Nano PCB west edge, with the Nano's 18.3 mm pin
+  spacing giving insertion/removal room.
+
+UPDATE 2026-07-20 (rev G): hierarchical schematic added
+- muscle_wire_driver_4limb.kicad_sch (top) + limb_driver.kicad_sch
+  (sub-sheet, instanced 4x as LIMB1..LIMB4) + .kicad_pro project.
+- Top sheet: Nano R4 (A1) with VIN<-+10V, 5V->VCC, A4/A5 I2C, D2-D5 ->
+  SEL1-4, D6 -> MPU_INT; J1 10V terminal; J2 SEN0142 header (VCC GND
+  SCL SDA INT); R900/R901 bus pullups; unused Nano pins no-connected.
+- Limb sheet = original single-limb schematic with: J1 + R1/R2 removed,
+  A0 -> hierarchical pin SEL, AD5593R I/O labels permuted to match the
+  PCB pin remap, C1-C3 drawn rotated so cap pin numbers match the PCB.
+- References annotated per instance to MATCH THE PCB (U101.., R111..,
+  J101.., etc.).
+- VERIFIED: geometric netlist extraction of the schematic matches the
+  PCB pad-for-pad: 124/124 limb pins (limb 1 checked; instances are
+  identical), all top-level pins correct. Net names differ only as
+  aliases (schematic DRAIN1/RESET_N/LED_A = PCB DRNx/RST/LED).
+- To link: open the .kicad_pro; if running "Update PCB from Schematic",
+  enable "Re-link footprints by reference" (UUIDs differ; references
+  match). PCB net names will adopt hierarchical names - cosmetic only.
+
+UPDATE 2026-07-20 (rev H): limb sheet redrawn with wires
+- limb_driver.kicad_sch is now fully drawn instead of label-based:
+  each channel reads left-to-right as a complete signal chain -
+  AD5593R I/O -> drawn SET line -> opamp(+) -> 220R -> FET gate
+  (100k pulldown), source -> 1R0 sense -> GND, with the feedback loop
+  drawn back: 10n from output to (-), 1k from (-) node to the sense
+  node. Drains drawn to the flyback diodes and the J connector.
+  The 8 SET/ADC lines run as drawn vertical drops from U1 to the four
+  channel rows. Labels remain only for power rails (GND/VCC/+10V),
+  the I2C bus (SDA/SCL), and the SEL hierarchical pin - standard
+  practice. Opamp power units + decouplers drawn at the sheet bottom.
+- Re-verified: schematic connectivity partition matches the PCB
+  pad-for-pad (124/124 pins), references and hierarchy unchanged.
+
+UPDATE 2026-07-20 (rev I): limb sheet readability pass
+- Orientation-aware ref/value placement (beside vertical parts, above
+  horizontal ones), smaller field font, gate-resistor text stack fixed,
+  select subtree (R4/R5/LED) moved off the I2C wire runs, support
+  cluster labels de-tangled, R3 redrawn horizontal.
+- Connectivity re-verified after each change: 124/124 pins match PCB.
+
+UPDATE 2026-07-22 (v2 stage 1): archive + unified names
+- v1 (70x88) archived under archive/v1_4limb_70x88_2026-07-20/ (frozen, usable).
+- Approved v2 floor plan: floorplan_v2_proposal.png (72x70; Nano/IMU/
+  Makeblock straddle limbs on socket headers, IMU centered, board shrinks).
+- UNIFIED NET NAMES applied across board + schematic (verified, geometry
+  unchanged so routing stays clean):
+    VCC        -> +5V
+    MPU_INT    -> IMU_INT
+    L#_DRN#    -> L#_DRAIN#
+    L#_RST     -> L#_RESET
+    (L#_LED unchanged; new BT_TX/BT_RX reserved for Makeblock Serial1)
+  Files: muscle_wire_driver_4limb_v2.{kicad_pcb,kicad_sch,kicad_pro},
+         limb_driver_v2.kicad_sch. Re-verified: all nets connected,
+         clearances >= 0.2 mm.
+- STAGE 2 (pending): physical re-arrangement per the approved floor plan.
+  This is a full re-layout - the plug-in boards' THT header pins must be
+  threaded into clear lanes among each limb's SMD, then everything
+  re-routed. Larger effort than a tweak; to be built + verified in
+  checkpointed passes like v1. Makeblock 1x4 UART header (+5V/GND/
+  BT_TX/BT_RX) + antenna keep-out added in that phase.
+
+UPDATE 2026-07-22 (v2 stage 2a): placement complete + verified
+- muscle_wire_driver_v2.kicad_pcb - NEW 70x70 board (was 70x88).
+- Limb row pitch = 15.24 mm (= Nano header row spacing) so each plug-in
+  board's THT pins land in the CLEAR gaps between limb strips - the SMD
+  only reaches +/-5.5 mm from each strip center, header rows sit +/-7.6.
+    * A1 Nano R4: rows in top margin + L1/L2 gap (straddles L1)
+    * J6 SEN0142 IMU: 1x5, board CENTER (L2/L3 gap)
+    * J7 Makeblock 13030: 1x4 UART (+5V/GND/BT_RX/BT_TX), L3/L4 gap;
+      antenna keep-out drawn at right edge (Dwgs.User)
+    * J1-J4 SMA actuators left edge; J5 10V terminal left-bottom
+    * R900/R901 I2C pullups in right margin
+- Placement clearance PRECHECK: 0 violations. Unified names throughout.
+- Preview: v2_placement.png (orange=plug-in THT pins in gaps, blue=SMD).
+- STAGE 2b (next): route. Intra-limb routing ports from v1 (relative
+  geometry preserved); the plug-in header rails (+5V/GND/SDA/SCL/SEL1-4/
+  +10V/IMU_INT/BT_TX/BT_RX) fan from the gap-lane pins - checkpointed
+  passes + connectivity/clearance verify, same as v1.
+
+UPDATE 2026-07-22 (v2 stage 2a-fix): header pinouts corrected
+- J6 SEN0142: pin order VCC GND SDA SCL INT (SDA/SCL were swapped).
+- A1 Nano UART crossover: TX1->BT_RX, RX0->BT_TX (module TX->Nano RX).
+- J7 Makeblock serial (physical VCC GND TX RX): TX->BT_TX->Nano RX0,
+  RX->BT_RX->Nano TX1. Reference = Makeblock mCore serial socket
+  (module TX to MCU RXD). Module-labeled TX = its output.
+- J8 Makeblock aux (physical DTR GND RST): DTR = no-connect, GND,
+  RST tied HIGH (+5V). 4-pin group is +4 pin positions right of the
+  3-pin; the two rows are 18 mm centre-to-centre.
+- Antenna at far end from headers; module oriented antenna-down so it
+  OVERHANGS the bottom board edge (Y=78). Ground pour ends at the edge
+  => no copper under the antenna. Body envelope on Dwgs.User.
+- Placement clearance: 0 violations. Still awaiting only routing.
+- CONFIRM AT ASSEMBLY: Nano seats VIN-corner over pad 1; SEN0142
+  VCC/GND/INT ends; module antenna overhang direction acceptable.
+
+UPDATE 2026-07-22 (v2 stage 2a-fix2): antenna + J5 corrected
+- Makeblock antenna runs 3mm to the RIGHT of the RX pin (not down).
+  Module shifted right: J7 RX pin at x=76.5, antenna overhangs the
+  RIGHT board edge (X1=80), no copper beneath (pour ends at edge).
+  J7 x68.9-76.5 y56.1; J8 x58.7-63.8 y74.1 (still 18mm apart, 4-pin
+  group +4 pins right of the 3-pin).
+- J5 (10V terminal) was half off the left edge; moved to cx=14.5 -
+  both pads on-board (+10V x11.96, GND x17.04; edge X0=10).
+- OPEN ITEM: bottom-right mounting hole (77.5,75) is now under the
+  Makeblock body (module elevated ~8.5mm) - relocate or install screw
+  before the module. Awaiting user preference.
+
+UPDATE 2026-07-22 (v2 stage 2a-fix3): board shrunk for weight
+- Right edge pulled in X1 80->73: board now 63 x 70 mm (was 70x70),
+  ~10% less area/weight. Rightmost limb part is D104 @ x71.42; edge at
+  73 leaves ~1.6 mm margin.
+- R900/R901 I2C pullups relocated from the right margin into the gap23
+  lane left of the IMU (R900 @ 32,40.86; R901 @ 35.5,40.86).
+- Makeblock shifted left: J7 RX pin now x71.5, antenna overhangs the
+  NEW right edge (x73); J8 3-pin follows (18mm, +4 pins). J5 unchanged.
+- Mounting holes re-fit: (12.5,11)(70.5,10.2)(12.5,75)(70.5,75).
+  Bottom-right (70.5,75) still under the Makeblock body (open item).
+- Placement clearance: 0 violations.
+
+UPDATE 2026-07-22 (v2 stage 2b: routing IN PROGRESS)
+- Routing engine (A* autorouter) + v1 fanout strategy ported to v2.
+  muscle_wire_driver_v2_routed.kicad_pcb = work-in-progress route.
+- DONE & clean: drains fan to actuator conns (no wander), channel
+  OUT/GATE, +10V rail, GND partial+stitching. Clearance verified: ALL
+  pairs >= 0.2 mm. ~1600 segs / 196 vias.
+- REMAINING (~25+3 nets): U1<->opamp SET/ADC connections (esp. limbs
+  3-4 under the Makeblock) + header rails IMU_INT/BT_TX/BT_RX. Needs
+  v1's U1->opamp SET/ADC B.Cu lanes re-derived to thread past the
+  gap-lane headers (v1's lanes assumed a bottom-strip Nano). Checkpoint:
+  routed_v2.json; driver: route_v2.py (resumable, BUDGET env).
+- FALLBACK (fully routed + verified): muscle_wire_driver_4limb_v2
+  (v1 70x88 layout, unified names) - shippable now.
+
+UPDATE 2026-07-22 (v2 stage 2b cont'd): FULLY CONNECTED
+- muscle_wire_driver_v2_routed.kicad_pcb: every signal net now routes
+  (GND completes via pour+stitching). v1 SET/ADC U1->opamp lanes ported
+  + drains/OUT/GATE/+10V; ~1600 segs.
+- REMAINING: 28 clearance shorts, ALL one pattern - the +Y-side
+  ADC2/SET4/ADC4 B.Cu bridges cross the SET1(x33)/SET2(x42.25) B.Cu
+  lanes inside each limb strip; plus ADC2 far-escape (x49.85) is 0.055
+  from DRAIN2 (x49.42). Fix = route those 3 bridges on F.Cu across the
+  SET lanes (or assign distinct B.Cu corridors), nudge ADC2 escape to
+  x50.3. Bounded, ~1 focused pass. Driver route_v2.py / ckpt routed_v2.json.
+- NOTE: v2_routed_preview.png envelope boxes are a stale artifact from
+  the v1-layout render.py; ignore them (real outline = 63x70).

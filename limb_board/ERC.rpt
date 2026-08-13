@@ -1,0 +1,1707 @@
+ERC report (2026-08-04T17:01:14, Encoding UTF8)
+Report includes: Errors, Warnings, Exclusions
+
+***** Sheet /
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 787 mils): Symbol C101 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 787 mils): Symbol C101 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 1287 mils): Symbol C102 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 1287 mils): Symbol C102 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 1787 mils): Symbol C103 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 1787 mils): Symbol C103 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 2287 mils): Symbol C104 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 2287 mils): Symbol C104 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 2787 mils): Symbol C105 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 2787 mils): Symbol C105 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 3287 mils): Symbol C106 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 3287 mils): Symbol C106 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 3787 mils): Symbol C111 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 3787 mils): Symbol C111 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 4287 mils): Symbol C121 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 4287 mils): Symbol C121 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 4787 mils): Symbol C131 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 4787 mils): Symbol C131 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 5287 mils): Symbol C141 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 5287 mils): Symbol C141 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 5787 mils): Symbol D101 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 5787 mils): Symbol D101 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 6287 mils): Symbol D102 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 6287 mils): Symbol D102 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 6787 mils): Symbol D103 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 6787 mils): Symbol D103 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 7287 mils): Symbol D104 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 7287 mils): Symbol D104 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 7787 mils): Symbol D105 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 7787 mils): Symbol D105 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 8287 mils): Symbol J101 [SYM2]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 8287 mils): Symbol J101 [SYM2]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 9087 mils): Symbol Q101 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 9087 mils): Symbol Q101 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 9687 mils): Symbol Q102 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 9687 mils): Symbol Q102 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 10287 mils): Symbol Q103 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 10287 mils): Symbol Q103 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 10887 mils): Symbol Q104 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 10887 mils): Symbol Q104 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 11487 mils): Symbol R103 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 11487 mils): Symbol R103 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 11987 mils): Symbol R105 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 11987 mils): Symbol R105 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 12487 mils): Symbol R111 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 12487 mils): Symbol R111 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 12987 mils): Symbol R112 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 12987 mils): Symbol R112 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 13487 mils): Symbol R113 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 13487 mils): Symbol R113 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 13987 mils): Symbol R114 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 13987 mils): Symbol R114 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 14487 mils): Symbol R115 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 14487 mils): Symbol R115 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 14987 mils): Symbol R121 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 14987 mils): Symbol R121 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 15487 mils): Symbol R122 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 15487 mils): Symbol R122 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 15987 mils): Symbol R123 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 15987 mils): Symbol R123 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 16487 mils): Symbol R124 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 16487 mils): Symbol R124 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 16987 mils): Symbol R125 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 16987 mils): Symbol R125 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 17487 mils): Symbol R131 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 17487 mils): Symbol R131 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 17987 mils): Symbol R132 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 17987 mils): Symbol R132 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 18487 mils): Symbol R133 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 18487 mils): Symbol R133 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 18987 mils): Symbol R134 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 18987 mils): Symbol R134 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 19487 mils): Symbol R135 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 19487 mils): Symbol R135 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 19987 mils): Symbol R141 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 19987 mils): Symbol R141 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 20487 mils): Symbol R142 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 20487 mils): Symbol R142 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 20987 mils): Symbol R143 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 20987 mils): Symbol R143 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 21487 mils): Symbol R144 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 21487 mils): Symbol R144 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 21987 mils): Symbol R145 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 21987 mils): Symbol R145 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 22487 mils): Symbol U101 [SYM1]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 22487 mils): Symbol U101 [SYM1]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 24387 mils): Symbol U102 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 24387 mils): Symbol U102 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 25487 mils): Symbol U103 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 25487 mils): Symbol U103 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 26587 mils): Symbol C201 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 26587 mils): Symbol C201 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 27087 mils): Symbol C202 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 27087 mils): Symbol C202 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 27587 mils): Symbol C203 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 27587 mils): Symbol C203 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(787 mils, 28087 mils): Symbol C204 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(787 mils, 28087 mils): Symbol C204 [SYM0]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 787 mils): Symbol C101 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 1287 mils): Symbol C102 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 1787 mils): Symbol C103 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 2287 mils): Symbol C104 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 2787 mils): Symbol C105 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 3287 mils): Symbol C106 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 3787 mils): Symbol C111 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 4287 mils): Symbol C121 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 4787 mils): Symbol C131 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 5287 mils): Symbol C141 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 5787 mils): Symbol D101 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 6287 mils): Symbol D102 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 6787 mils): Symbol D103 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 7287 mils): Symbol D104 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 7787 mils): Symbol D105 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 8287 mils): Symbol J101 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 9087 mils): Symbol Q101 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 9687 mils): Symbol Q102 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 10287 mils): Symbol Q103 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 10887 mils): Symbol Q104 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 11487 mils): Symbol R103 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 11987 mils): Symbol R105 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 12487 mils): Symbol R111 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 12987 mils): Symbol R112 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 13487 mils): Symbol R113 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 13987 mils): Symbol R114 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 14487 mils): Symbol R115 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 14987 mils): Symbol R121 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 15487 mils): Symbol R122 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 15987 mils): Symbol R123 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 16487 mils): Symbol R124 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 16987 mils): Symbol R125 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 17487 mils): Symbol R131 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 17987 mils): Symbol R132 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 18487 mils): Symbol R133 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 18987 mils): Symbol R134 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 19487 mils): Symbol R135 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 19987 mils): Symbol R141 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 20487 mils): Symbol R142 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 20987 mils): Symbol R143 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 21487 mils): Symbol R144 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 21987 mils): Symbol R145 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 22487 mils): Symbol U101 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 24387 mils): Symbol U102 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 25487 mils): Symbol U103 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 26587 mils): Symbol C201 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 27087 mils): Symbol C202 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 27587 mils): Symbol C203 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(887 mils, 28087 mils): Symbol C204 Pin 1 [1, Passive, Line]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 787 mils): Symbol C205 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 787 mils): Symbol C205 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 1287 mils): Symbol C206 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 1287 mils): Symbol C206 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 1787 mils): Symbol C211 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 1787 mils): Symbol C211 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 2287 mils): Symbol C221 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 2287 mils): Symbol C221 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 2787 mils): Symbol C231 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 2787 mils): Symbol C231 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 3287 mils): Symbol C241 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 3287 mils): Symbol C241 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 3787 mils): Symbol D201 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 3787 mils): Symbol D201 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 4287 mils): Symbol D202 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 4287 mils): Symbol D202 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 4787 mils): Symbol D203 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 4787 mils): Symbol D203 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 5287 mils): Symbol D204 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 5287 mils): Symbol D204 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 5787 mils): Symbol D205 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 5787 mils): Symbol D205 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 6287 mils): Symbol J201 [SYM2]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 6287 mils): Symbol J201 [SYM2]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 7087 mils): Symbol Q201 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 7087 mils): Symbol Q201 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 7687 mils): Symbol Q202 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 7687 mils): Symbol Q202 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 8287 mils): Symbol Q203 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 8287 mils): Symbol Q203 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 8887 mils): Symbol Q204 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 8887 mils): Symbol Q204 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 9487 mils): Symbol R203 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 9487 mils): Symbol R203 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 9987 mils): Symbol R205 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 9987 mils): Symbol R205 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 10487 mils): Symbol R211 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 10487 mils): Symbol R211 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 10987 mils): Symbol R212 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 10987 mils): Symbol R212 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 11487 mils): Symbol R213 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 11487 mils): Symbol R213 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 11987 mils): Symbol R214 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 11987 mils): Symbol R214 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 12487 mils): Symbol R215 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 12487 mils): Symbol R215 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 12987 mils): Symbol R221 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 12987 mils): Symbol R221 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 13487 mils): Symbol R222 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 13487 mils): Symbol R222 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 13987 mils): Symbol R223 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 13987 mils): Symbol R223 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 14487 mils): Symbol R224 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 14487 mils): Symbol R224 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 14987 mils): Symbol R225 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 14987 mils): Symbol R225 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 15487 mils): Symbol R231 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 15487 mils): Symbol R231 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 15987 mils): Symbol R232 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 15987 mils): Symbol R232 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 16487 mils): Symbol R233 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 16487 mils): Symbol R233 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 16987 mils): Symbol R234 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 16987 mils): Symbol R234 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 17487 mils): Symbol R235 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 17487 mils): Symbol R235 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 17987 mils): Symbol R241 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 17987 mils): Symbol R241 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 18487 mils): Symbol R242 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 18487 mils): Symbol R242 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 18987 mils): Symbol R243 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 18987 mils): Symbol R243 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 19487 mils): Symbol R244 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 19487 mils): Symbol R244 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 19987 mils): Symbol R245 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 19987 mils): Symbol R245 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 20487 mils): Symbol U201 [SYM1]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 20487 mils): Symbol U201 [SYM1]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 22387 mils): Symbol U202 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 22387 mils): Symbol U202 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 23487 mils): Symbol U203 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 23487 mils): Symbol U203 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 24587 mils): Symbol C301 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 24587 mils): Symbol C301 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 25087 mils): Symbol C302 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 25087 mils): Symbol C302 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 25587 mils): Symbol C303 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 25587 mils): Symbol C303 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 26087 mils): Symbol C304 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 26087 mils): Symbol C304 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 26587 mils): Symbol C305 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 26587 mils): Symbol C305 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 27087 mils): Symbol C306 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 27087 mils): Symbol C306 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 27587 mils): Symbol C311 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 27587 mils): Symbol C311 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(2835 mils, 28087 mils): Symbol C321 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(2835 mils, 28087 mils): Symbol C321 [SYM0]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 787 mils): Symbol C205 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 1287 mils): Symbol C206 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 1787 mils): Symbol C211 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 2287 mils): Symbol C221 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 2787 mils): Symbol C231 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 3287 mils): Symbol C241 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 3787 mils): Symbol D201 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 4287 mils): Symbol D202 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 4787 mils): Symbol D203 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 5287 mils): Symbol D204 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 5787 mils): Symbol D205 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 6287 mils): Symbol J201 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 7087 mils): Symbol Q201 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 7687 mils): Symbol Q202 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 8287 mils): Symbol Q203 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 8887 mils): Symbol Q204 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 9487 mils): Symbol R203 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 9987 mils): Symbol R205 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 10487 mils): Symbol R211 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 10987 mils): Symbol R212 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 11487 mils): Symbol R213 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 11987 mils): Symbol R214 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 12487 mils): Symbol R215 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 12987 mils): Symbol R221 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 13487 mils): Symbol R222 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 13987 mils): Symbol R223 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 14487 mils): Symbol R224 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 14987 mils): Symbol R225 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 15487 mils): Symbol R231 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 15987 mils): Symbol R232 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 16487 mils): Symbol R233 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 16987 mils): Symbol R234 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 17487 mils): Symbol R235 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 17987 mils): Symbol R241 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 18487 mils): Symbol R242 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 18987 mils): Symbol R243 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 19487 mils): Symbol R244 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 19987 mils): Symbol R245 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 20487 mils): Symbol U201 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 22387 mils): Symbol U202 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 23487 mils): Symbol U203 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 24587 mils): Symbol C301 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 25087 mils): Symbol C302 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 25587 mils): Symbol C303 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 26087 mils): Symbol C304 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 26587 mils): Symbol C305 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 27087 mils): Symbol C306 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 27587 mils): Symbol C311 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(2935 mils, 28087 mils): Symbol C321 Pin 1 [1, Passive, Line]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 787 mils): Symbol C331 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 787 mils): Symbol C331 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 1287 mils): Symbol C341 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 1287 mils): Symbol C341 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 1787 mils): Symbol D301 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 1787 mils): Symbol D301 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 2287 mils): Symbol D302 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 2287 mils): Symbol D302 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 2787 mils): Symbol D303 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 2787 mils): Symbol D303 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 3287 mils): Symbol D304 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 3287 mils): Symbol D304 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 3787 mils): Symbol D305 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 3787 mils): Symbol D305 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 4287 mils): Symbol J301 [SYM2]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 4287 mils): Symbol J301 [SYM2]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 5087 mils): Symbol Q301 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 5087 mils): Symbol Q301 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 5687 mils): Symbol Q302 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 5687 mils): Symbol Q302 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 6287 mils): Symbol Q303 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 6287 mils): Symbol Q303 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 6887 mils): Symbol Q304 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 6887 mils): Symbol Q304 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 7487 mils): Symbol R303 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 7487 mils): Symbol R303 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 7987 mils): Symbol R305 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 7987 mils): Symbol R305 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 8487 mils): Symbol R311 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 8487 mils): Symbol R311 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 8987 mils): Symbol R312 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 8987 mils): Symbol R312 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 9487 mils): Symbol R313 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 9487 mils): Symbol R313 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 9987 mils): Symbol R314 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 9987 mils): Symbol R314 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 10487 mils): Symbol R315 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 10487 mils): Symbol R315 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 10987 mils): Symbol R321 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 10987 mils): Symbol R321 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 11487 mils): Symbol R322 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 11487 mils): Symbol R322 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 11987 mils): Symbol R323 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 11987 mils): Symbol R323 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 12487 mils): Symbol R324 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 12487 mils): Symbol R324 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 12987 mils): Symbol R325 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 12987 mils): Symbol R325 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 13487 mils): Symbol R331 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 13487 mils): Symbol R331 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 13987 mils): Symbol R332 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 13987 mils): Symbol R332 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 14487 mils): Symbol R333 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 14487 mils): Symbol R333 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 14987 mils): Symbol R334 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 14987 mils): Symbol R334 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 15487 mils): Symbol R335 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 15487 mils): Symbol R335 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 15987 mils): Symbol R341 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 15987 mils): Symbol R341 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 16487 mils): Symbol R342 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 16487 mils): Symbol R342 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 16987 mils): Symbol R343 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 16987 mils): Symbol R343 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 17487 mils): Symbol R344 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 17487 mils): Symbol R344 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 17987 mils): Symbol R345 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 17987 mils): Symbol R345 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 18487 mils): Symbol U301 [SYM1]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 18487 mils): Symbol U301 [SYM1]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 20387 mils): Symbol U302 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 20387 mils): Symbol U302 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 21487 mils): Symbol U303 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 21487 mils): Symbol U303 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 22587 mils): Symbol C401 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 22587 mils): Symbol C401 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 23087 mils): Symbol C402 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 23087 mils): Symbol C402 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 23587 mils): Symbol C403 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 23587 mils): Symbol C403 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 24087 mils): Symbol C404 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 24087 mils): Symbol C404 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 24587 mils): Symbol C405 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 24587 mils): Symbol C405 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 25087 mils): Symbol C406 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 25087 mils): Symbol C406 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 25587 mils): Symbol C411 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 25587 mils): Symbol C411 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 26087 mils): Symbol C421 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 26087 mils): Symbol C421 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 26587 mils): Symbol C431 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 26587 mils): Symbol C431 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 27087 mils): Symbol C441 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 27087 mils): Symbol C441 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 27587 mils): Symbol D401 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 27587 mils): Symbol D401 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(4882 mils, 28087 mils): Symbol D402 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(4882 mils, 28087 mils): Symbol D402 [SYM0]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 787 mils): Symbol C331 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 1287 mils): Symbol C341 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 1787 mils): Symbol D301 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 2287 mils): Symbol D302 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 2787 mils): Symbol D303 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 3287 mils): Symbol D304 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 3787 mils): Symbol D305 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 4287 mils): Symbol J301 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 5087 mils): Symbol Q301 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 5687 mils): Symbol Q302 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 6287 mils): Symbol Q303 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 6887 mils): Symbol Q304 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 7487 mils): Symbol R303 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 7987 mils): Symbol R305 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 8487 mils): Symbol R311 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 8987 mils): Symbol R312 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 9487 mils): Symbol R313 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 9987 mils): Symbol R314 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 10487 mils): Symbol R315 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 10987 mils): Symbol R321 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 11487 mils): Symbol R322 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 11987 mils): Symbol R323 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 12487 mils): Symbol R324 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 12987 mils): Symbol R325 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 13487 mils): Symbol R331 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 13987 mils): Symbol R332 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 14487 mils): Symbol R333 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 14987 mils): Symbol R334 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 15487 mils): Symbol R335 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 15987 mils): Symbol R341 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 16487 mils): Symbol R342 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 16987 mils): Symbol R343 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 17487 mils): Symbol R344 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 17987 mils): Symbol R345 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 18487 mils): Symbol U301 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 20387 mils): Symbol U302 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 21487 mils): Symbol U303 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 22587 mils): Symbol C401 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 23087 mils): Symbol C402 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 23587 mils): Symbol C403 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 24087 mils): Symbol C404 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 24587 mils): Symbol C405 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 25087 mils): Symbol C406 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 25587 mils): Symbol C411 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 26087 mils): Symbol C421 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 26587 mils): Symbol C431 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 27087 mils): Symbol C441 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 27587 mils): Symbol D401 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(4982 mils, 28087 mils): Symbol D402 Pin 1 [1, Passive, Line]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 787 mils): Symbol D403 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 787 mils): Symbol D403 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 1287 mils): Symbol D404 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 1287 mils): Symbol D404 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 1787 mils): Symbol D405 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 1787 mils): Symbol D405 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 2287 mils): Symbol J401 [SYM2]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 2287 mils): Symbol J401 [SYM2]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 3087 mils): Symbol Q401 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 3087 mils): Symbol Q401 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 3687 mils): Symbol Q402 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 3687 mils): Symbol Q402 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 4287 mils): Symbol Q403 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 4287 mils): Symbol Q403 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 4887 mils): Symbol Q404 [SYM3]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 4887 mils): Symbol Q404 [SYM3]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 5487 mils): Symbol R403 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 5487 mils): Symbol R403 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 5987 mils): Symbol R405 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 5987 mils): Symbol R405 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 6487 mils): Symbol R411 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 6487 mils): Symbol R411 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 6987 mils): Symbol R412 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 6987 mils): Symbol R412 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 7487 mils): Symbol R413 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 7487 mils): Symbol R413 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 7987 mils): Symbol R414 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 7987 mils): Symbol R414 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 8487 mils): Symbol R415 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 8487 mils): Symbol R415 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 8987 mils): Symbol R421 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 8987 mils): Symbol R421 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 9487 mils): Symbol R422 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 9487 mils): Symbol R422 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 9987 mils): Symbol R423 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 9987 mils): Symbol R423 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 10487 mils): Symbol R424 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 10487 mils): Symbol R424 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 10987 mils): Symbol R425 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 10987 mils): Symbol R425 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 11487 mils): Symbol R431 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 11487 mils): Symbol R431 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 11987 mils): Symbol R432 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 11987 mils): Symbol R432 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 12487 mils): Symbol R433 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 12487 mils): Symbol R433 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 12987 mils): Symbol R434 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 12987 mils): Symbol R434 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 13487 mils): Symbol R435 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 13487 mils): Symbol R435 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 13987 mils): Symbol R441 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 13987 mils): Symbol R441 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 14487 mils): Symbol R442 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 14487 mils): Symbol R442 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 14987 mils): Symbol R443 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 14987 mils): Symbol R443 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 15487 mils): Symbol R444 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 15487 mils): Symbol R444 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 15987 mils): Symbol R445 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 15987 mils): Symbol R445 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 16487 mils): Symbol U401 [SYM1]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 16487 mils): Symbol U401 [SYM1]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 18387 mils): Symbol U402 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 18387 mils): Symbol U402 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 19487 mils): Symbol U403 [SYM5]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 19487 mils): Symbol U403 [SYM5]
+[footprint_link_issues]: The current configuration does not include the footprint library 'custom'
+    ; warning
+    @(6929 mils, 20587 mils): Symbol A1 [SYM8]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 20587 mils): Symbol A1 [SYM8]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 22187 mils): Symbol H1 [SYM6]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 22587 mils): Symbol H2 [SYM6]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 22987 mils): Symbol H3 [SYM6]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 23387 mils): Symbol H4 [SYM6]
+[footprint_link_issues]: The current configuration does not include the footprint library 'custom'
+    ; warning
+    @(6929 mils, 23787 mils): Symbol J5 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 23787 mils): Symbol J5 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library 'custom'
+    ; warning
+    @(6929 mils, 24287 mils): Symbol J6 [SYM2]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 24287 mils): Symbol J6 [SYM2]
+[footprint_link_issues]: The current configuration does not include the footprint library 'custom'
+    ; warning
+    @(6929 mils, 25087 mils): Symbol J7 [SYM7]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 25087 mils): Symbol J7 [SYM7]
+[footprint_link_issues]: The current configuration does not include the footprint library 'custom'
+    ; warning
+    @(6929 mils, 25787 mils): Symbol J8 [SYM4]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 25787 mils): Symbol J8 [SYM4]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 26287 mils): Symbol R900 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 26287 mils): Symbol R900 [SYM0]
+[footprint_link_issues]: The current configuration does not include the footprint library ''
+    ; warning
+    @(6929 mils, 26787 mils): Symbol R901 [SYM0]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'genlib'
+    ; warning
+    @(6929 mils, 26787 mils): Symbol R901 [SYM0]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 787 mils): Symbol D403 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 1287 mils): Symbol D404 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 1787 mils): Symbol D405 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 2287 mils): Symbol J401 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 3087 mils): Symbol Q401 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 3687 mils): Symbol Q402 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 4287 mils): Symbol Q403 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 4887 mils): Symbol Q404 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 5487 mils): Symbol R403 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 5987 mils): Symbol R405 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 6487 mils): Symbol R411 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 6987 mils): Symbol R412 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 7487 mils): Symbol R413 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 7987 mils): Symbol R414 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 8487 mils): Symbol R415 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 8987 mils): Symbol R421 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 9487 mils): Symbol R422 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 9987 mils): Symbol R423 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 10487 mils): Symbol R424 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 10987 mils): Symbol R425 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 11487 mils): Symbol R431 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 11987 mils): Symbol R432 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 12487 mils): Symbol R433 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 12987 mils): Symbol R434 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 13487 mils): Symbol R435 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 13987 mils): Symbol R441 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 14487 mils): Symbol R442 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 14987 mils): Symbol R443 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 15487 mils): Symbol R444 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 15987 mils): Symbol R445 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 16487 mils): Symbol U401 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 18387 mils): Symbol U402 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 19487 mils): Symbol U403 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 20587 mils): Symbol A1 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 23787 mils): Symbol J5 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 24287 mils): Symbol J6 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 25087 mils): Symbol J7 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 25787 mils): Symbol J8 Pin 2 [2, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 26287 mils): Symbol R900 Pin 1 [1, Passive, Line]
+[endpoint_off_grid]: Symbol pin or wire end off connection grid
+    ; warning
+    @(7029 mils, 26787 mils): Symbol R901 Pin 1 [1, Passive, Line]
+
+ ** ERC messages: 565  Errors 0  Warnings 565
+
+ ** Ignored checks:
+    - Global label only appears once in the schematic
+    - Four connection points are joined together
+    - SPICE model issue
+    - Assigned footprint doesn't match footprint filters

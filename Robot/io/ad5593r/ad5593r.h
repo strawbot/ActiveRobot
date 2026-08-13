@@ -36,6 +36,11 @@ void ad5593r_bind_hw(const ad5593r_hw_t *hw);
 // Returns false if any transaction was NACKed (chip not present/wired).
 bool ad5593r_init(void);
 
+// ad5593r_reset — same as ad5593r_init(). Exposed separately so a CLI word
+// can restore known-good state (e.g. after a wedged bus or a DAC channel
+// left mid-ramp) without implying "first-time bring-up".
+bool ad5593r_reset(void);
+
 // ad5593r_set_dac — write a 12-bit code (0-4095) to DAC channel (0-3),
 // i.e. I/O(channel). Output is code/4095 * 2.5V (internal reference,
 // 0-VREF range). Returns false on I2C failure or an out-of-range channel.
@@ -45,6 +50,19 @@ bool ad5593r_set_dac(uint8_t channel, uint16_t code12);
 // return the 12-bit result (0-4095) in *code12. Returns false on I2C
 // failure or an out-of-range channel.
 bool ad5593r_read_adc(uint8_t channel, uint16_t *code12);
+
+// ad5593r_read_dac — read back the input register of DAC channel (0-3),
+// i.e. I/O(channel) — the code last written by ad5593r_set_dac(), not a
+// fresh conversion. Returns false on I2C failure or an out-of-range
+// channel.
+bool ad5593r_read_dac(uint8_t channel, uint16_t *code12);
+
+// ad5593r_read_temp — read the on-chip temperature indicator (die
+// temperature, not tied to any I/O pin) and return degrees Celsius in
+// *temp_c. Datasheet accuracy is ~3 degrees C; only valid at ADC gain=1
+// (0-VREF range, the default ad5593r_init() sets). Returns false on I2C
+// failure.
+bool ad5593r_read_temp(float *temp_c);
 
 // ad5593r_status_t — readback of the registers that matter for a
 // diagnostic dump.

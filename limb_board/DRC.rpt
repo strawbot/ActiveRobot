@@ -1,0 +1,27 @@
+** Drc report for shoestring_rearch.kicad_pcb **
+** Created on 2026-08-05T22:54:41 **
+** Report includes: Errors, Warnings **
+
+** Found 0 DRC violations **
+
+** Found 1 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(3.1375 mm, 3.0000 mm): Zone [GND] on F.Cu, priority 0
+    @(3.0000 mm, 3.0000 mm): Zone [GND] on In1.Cu, priority 0
+
+** Found 0 Footprint errors **
+
+** Ignored checks **
+    - Courtyards overlap
+    - Footprint has no courtyard defined
+    - Track endpoint not centered on via
+    - Tuning profile track geometries
+    - Footprint doesn't match symbol's footprint filters
+    - Silkscreen clearance
+    - Silkscreen clipped by solder mask
+    - Text height out of range
+    - Footprint component type doesn't match footprint pads
+    - Footprint not found in libraries
+
+** End of Report **

@@ -57,4 +57,11 @@ bool ads1015_start_conversion(uint8_t addr7, uint8_t channel);
 // I2C failure.
 bool ads1015_read_conversion(uint8_t addr7, uint16_t *code12);
 
+// ads1015_read_config — read back the raw 16-bit Config register (OS,
+// MUX, PGA, MODE, DR, COMP_* — see ads1015.c for the bit layout).
+// Diagnostic: lets a caller confirm what actually landed in the chip
+// after ads1015_start_conversion(), instead of only seeing the
+// downstream conversion result. Returns false on I2C failure.
+bool ads1015_read_config(uint8_t addr7, uint16_t *config);
+
 #endif // ROBOT_IO_ADS1015_H

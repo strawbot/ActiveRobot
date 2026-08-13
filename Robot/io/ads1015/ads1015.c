@@ -47,6 +47,25 @@ bool ads1015_start_conversion(uint8_t addr7, uint8_t channel) {
     return g_hw->i2c_write(addr7, buf, sizeof(buf));
 }
 
+bool ads1015_read_config(uint8_t addr7, uint16_t *config) {
+    if (g_hw == NULL || config == NULL) {
+        return false;
+    }
+
+    uint8_t ptr = ADS1015_REG_CONFIG;
+    if (!g_hw->i2c_write(addr7, &ptr, 1)) {
+        return false;
+    }
+
+    uint8_t buf[2];
+    if (!g_hw->i2c_read(addr7, buf, sizeof(buf))) {
+        return false;
+    }
+
+    *config = ((uint16_t)buf[0] << 8) | buf[1];
+    return true;
+}
+
 bool ads1015_read_conversion(uint8_t addr7, uint16_t *code12) {
     if (g_hw == NULL || code12 == NULL) {
         return false;

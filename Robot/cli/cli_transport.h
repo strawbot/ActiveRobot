@@ -27,10 +27,24 @@ typedef struct {
     // both thread and ISR context; a no-op if there's nothing to send or the
     // transport isn't ready for more right now.
     void (*emit)(void);
+
+    // Short, fixed name for `show-cli`/diagnostics (e.g. "uart", "cdc").
+    // Never NULL for a real transport.
+    const char *name;
 } cli_transport_hw_t;
+
+// Claim EmitEvent for this transport without feeding the CLI a byte — for
+// a connect-time event (e.g. CDC's DTR callback) that has no byte to hand
+// to cli_transport_rx_byte() but should still become the active transport
+// for `show-cli`/diagnostics ahead of the first keystroke.
+void cli_transport_claim(const cli_transport_hw_t *hw);
 
 // Feed one received byte into the CLI, having this transport claim
 // EmitEvent first. Call once per byte from the board's own RX action.
 void cli_transport_rx_byte(const cli_transport_hw_t *hw, uint8_t byte);
+
+// Name of whichever transport last claimed EmitEvent (i.e. is currently the
+// active output), or "none" if nothing has fed the CLI a byte yet this boot.
+const char *cli_transport_active_name(void);
 
 #endif // ROBOT_CLI_TRANSPORT_H

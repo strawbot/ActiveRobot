@@ -41,4 +41,5 @@ For each new board:
    PlatformIO/Makefile boards).
 
 The file must be regenerated on every build (not just when something changed)
-so that `__TIMESTAMP__` reflects the compiler's actual invocation time.
+so that the baked-in time literal reflects the actual build time (a changing
+literal also forces content-hashing builds like SCons to recompile it).

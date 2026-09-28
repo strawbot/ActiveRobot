@@ -88,6 +88,9 @@ Using NTP as the worked example, the steps are:
 | `io/ads1015` | — | — | — | — | adopted |
 | `io/mcp4728` | — | — | — | — | adopted |
 | `io/mpu6050` | — | — | — | — | adopted |
+| `limbs/muscle` | — | — | — | — | adopted (simulated, no hw bound) |
+| `limbs/gait` | — | — | — | — | adopted |
+| `limbs/posture` | — | — | — | — | adopted (no IMU bound yet) |
 
 ## Next candidates for extraction
 

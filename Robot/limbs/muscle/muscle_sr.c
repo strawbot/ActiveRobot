@@ -24,6 +24,7 @@ static uint32_t times[MAX_TIMES];   // sorted distinct edge times, times[0] == 0
 static uint8_t  ntimes;
 static uint8_t  idx;
 static uint32_t out_mask = 0;       // pattern currently latched
+static void (*edge_cb)(uint32_t);   // called after each latch
 static uint32_t frame_ticks;
 
 static uint32_t to_ticks(uint32_t counts) {
@@ -49,6 +50,7 @@ static void drive(uint32_t m) {
     for (uint8_t c = 0; c < SR595_MAX_CHIPS; c++)
         sr595_put(c, (uint8_t)(m >> (8U * c)));
     sr595_latch();
+    if (edge_cb) edge_cb(m);
 }
 
 static void runner(void) {
@@ -93,6 +95,10 @@ static void commit(void) {
     idx = 0;
     runner();
 }
+
+bool muscle_sr_is_on(uint8_t ch) { return ch < MUSCLE_COUNT && (out_mask >> ch) & 1U; }
+
+void muscle_sr_on_edge(void (*cb)(uint32_t mask)) { edge_cb = cb; }
 
 static const muscle_hw_t ops = { set_window, commit };
 

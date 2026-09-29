@@ -31,21 +31,49 @@ static char *dec(char *end, int32_t v) {
     return p;
 }
 
+static void (*writers[CALIB_MAX_WRITERS])(calib_line_fn);
+static uint8_t nwriters;
+static uint16_t lines_saved;
+static bool     save_failed;
+
+bool calib_register_writer(void (*writer)(calib_line_fn emit)) {
+    if (nwriters >= CALIB_MAX_WRITERS) return false;
+    writers[nwriters++] = writer;
+    return true;
+}
+
+// Append "<values...> <word>" to the temp file. Sticky failure flag.
+static bool emit_line(const char *word, const int32_t *v, uint8_t n) {
+    if (save_failed) return false;
+    char line[8 * 12 + 24 + 1];
+    line[0] = 0;
+    if (n > 8U) n = 8U;
+    for (uint8_t i = 0; i < n; i++) {
+        char num[16];
+        strcat(line, dec(num + sizeof num, v[i]));
+        strcat(line, " ");
+    }
+    strncat(line, word, 24);
+    if (!fs_append_line(CALIB_TMP, line)) { save_failed = true; return false; }
+    lines_saved++;
+    return true;
+}
+
 bool calib_save(void) {
     fs_remove(CALIB_TMP);   // a stale temp from an interrupted save
+    lines_saved = 0;
+    save_failed = false;
     for (uint8_t i = 0; i < count; i++) {
-        char num[16], line[16 + 1 + 24 + 1];
-        char *v = dec(num + sizeof num, items[i].get());
-        strcpy(line, v);
-        strcat(line, " ");
-        strncat(line, items[i].word, 24);
-        if (!fs_append_line(CALIB_TMP, line)) {
-            fs_remove(CALIB_TMP);
-            print("calib: save failed (fs not mounted or full)"); printCr();
-            return false;
-        }
+        int32_t v = items[i].get();
+        emit_line(items[i].word, &v, 1);
     }
-    if (!count) { fs_remove(CALIB_FILE); return true; }
+    for (uint8_t i = 0; i < nwriters; i++) writers[i](emit_line);
+    if (save_failed) {
+        fs_remove(CALIB_TMP);
+        print("calib: save failed (fs not mounted or full)"); printCr();
+        return false;
+    }
+    if (!lines_saved) { fs_remove(CALIB_FILE); return true; }
     if (!fs_rename(CALIB_TMP, CALIB_FILE)) {
         print("calib: save failed (rename)"); printCr();
         return false;
@@ -108,5 +136,5 @@ void calib_load(void) {
 }
 
 void calib_cli_save(void) {
-    if (calib_save()) { print("calib: saved "); printDec0(count); print(" value(s)"); printCr(); }
+    if (calib_save()) { print("calib: saved "); printDec0(lines_saved); print(" value(s)"); printCr(); }
 }

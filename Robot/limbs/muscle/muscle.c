@@ -56,6 +56,15 @@ void muscle_init(uint8_t limb_mask) {
     muscle_relax();
 }
 
+uint8_t muscle_set_fitted(uint8_t limb_mask) {
+    uint8_t old = fitted;
+    fitted = limb_mask & MUSCLE_LIMBS_6;
+    for (uint8_t ch = 0; ch < MUSCLE_COUNT; ch++)
+        if (!limb_fitted(ch / MUSCLE_PER_LIMB)) act[ch] = 0;
+    reschedule();
+    return old;
+}
+
 void muscle_bind_hw(const muscle_hw_t *ops) {
     hw = ops;
     reschedule();

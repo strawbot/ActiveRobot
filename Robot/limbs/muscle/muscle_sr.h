@@ -15,8 +15,19 @@
 #ifndef ROBOT_MUSCLE_SR_H
 #define ROBOT_MUSCLE_SR_H
 
+#include <stdint.h>
+#include <stdbool.h>
+
 #define MUSCLE_SR_FRAME_MS 20
 
 void muscle_sr_init(void);   // bind to the muscle scheduler
+
+// muscle_sr_is_on — true while channel ch (0-23) is latched on.
+bool muscle_sr_is_on(uint8_t ch);
+
+// muscle_sr_on_edge — cb is called right after each latch with the pattern
+// now on (bit ch = channel ch). One callback; NULL clears it. It runs inside
+// the frame runner, so keep it short (schedule work with in()/later()).
+void muscle_sr_on_edge(void (*cb)(uint32_t mask));
 
 #endif

@@ -29,6 +29,16 @@
 // stay valid (use a string literal). Returns false when the table is full.
 bool calib_register(const char *setter_word, int32_t (*get)(void));
 
+// calib_line_fn — write one calibration line "<v0> <v1> ... <word>". n <= 8.
+typedef bool (*calib_line_fn)(const char *word, const int32_t *values, uint8_t n);
+
+// calib_register_writer — for a value that needs several numbers per line
+// (e.g. a per-wire record). At save time, writer() is called and emits any
+// number of lines through the callback; `word` must be a CLI word that takes
+// those n values and restores the record. Returns false when full.
+#define CALIB_MAX_WRITERS 4
+bool calib_register_writer(void (*writer)(calib_line_fn emit));
+
 // calib_save — rewrite the calibration file from the registered values.
 // Returns false (and prints why) if the fs is not mounted or full.
 bool calib_save(void);

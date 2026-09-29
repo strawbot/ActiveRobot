@@ -90,6 +90,7 @@ Using NTP as the worked example, the steps are:
 | `io/mcp4728` | — | — | — | — | adopted |
 | `io/mpu6050` | — | — | — | — | adopted |
 | `limbs/muscle` | — | — | — | — | adopted (simulated, no hw bound) |
+| `limbs/wirecal` | — | — | — | — | adopted (untested on wires) |
 | `limbs/gait` | — | — | — | — | adopted |
 | `limbs/posture` | — | — | — | — | adopted (no IMU bound yet) |
 

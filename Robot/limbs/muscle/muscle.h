@@ -59,6 +59,12 @@ typedef struct {
 } muscle_hw_t;
 
 void muscle_init(uint8_t limb_mask);
+
+// muscle_set_fitted — replace the fitted-limb mask and return the old one.
+// Fewer fitted limbs means a larger window per muscle (MUSCLE_FRAME / (2 *
+// fitted limbs)), which self-calibration uses to give ONE wire a long window.
+// Activations of limbs that stop being fitted are dropped.
+uint8_t muscle_set_fitted(uint8_t limb_mask);
 void muscle_bind_hw(const muscle_hw_t *ops);
 
 // Returns false for an out-of-range address or a limb that is not fitted.

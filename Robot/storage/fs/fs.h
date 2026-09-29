@@ -53,6 +53,13 @@ bool fs_append_line(const char *name, const char *text);
 // a time via keyIn(), as though it had been typed.
 bool fs_run(const char *name);
 
+// fs_read — copy up to max bytes of name, starting at offset, into buf.
+// Returns the number of bytes copied, 0 at or past the end of the file, or
+// -1 if the volume is not ready or the file does not exist. For callers that
+// consume a file in pieces (e.g. a state machine that must not queue a whole
+// file at once, unlike fs_run).
+int fs_read(const char *name, uint32_t offset, uint8_t *buf, uint32_t max);
+
 // fs_cat — print name's contents as raw text.
 bool fs_cat(const char *name);
 

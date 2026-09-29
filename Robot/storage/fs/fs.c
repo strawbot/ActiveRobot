@@ -339,6 +339,18 @@ bool fs_run(const char *name) {
     return true;
 }
 
+int fs_read(const char *name, uint32_t offset, uint8_t *buf, uint32_t max) {
+    if (!fs_ready()) return -1;
+    int idx = find(name);
+    if (idx < 0) return -1;
+    uint32_t len = g_entries[idx].length;
+    if (offset >= len) return 0;
+    uint32_t n = len - offset;
+    if (n > max) n = max;
+    if (!g_hw->read(data_region_start() + g_entries[idx].offset + offset, buf, n)) return -1;
+    return (int)n;
+}
+
 bool fs_cat(const char *name) {
     if (!fs_ready()) return false;
     int idx = find(name);

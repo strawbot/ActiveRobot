@@ -85,6 +85,7 @@ Using NTP as the worked example, the steps are:
 | `net/telnet` | adopted | — | — | — | — |
 | `net/http` | adopted | — | — | — | — |
 | `diagnostics/canary` | adopted | adopted | adopted | adopted | adopted |
+| `storage/calib` | — | — | — | — | adopted |
 | `io/ads1015` | — | — | — | — | adopted |
 | `io/mcp4728` | — | — | — | — | adopted |
 | `io/mpu6050` | — | — | — | — | adopted |

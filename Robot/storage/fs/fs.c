@@ -23,12 +23,14 @@
 #define FS_DIR_SECTOR_B 1u
 #define FS_DATA_START_SECTOR 2u
 
-// Sized for this board's 8x1024-byte volume (6 data sectors = 6144 bytes).
-// Shared by mount (reading a candidate directory's entries), compact
-// (buffering every live file's bytes across an erase), and append
-// (assembling old+new content) — none of these ever run concurrently, so
-// one static buffer covers all three instead of three separate ones.
-#define FS_SCRATCH_BYTES 6144
+// One static buffer, the size of a flash sector, is all the RAM the store
+// needs beyond its directory. It stages one destination sector at a time
+// while compacting, and is the chunk buffer when an append has to copy a file
+// to the log tail. (Mount reads only the two directory headers and then the
+// winning directory straight into place; a file that is already the last thing
+// in the log is extended in place without any copy.) fs_bind_hw() refuses a
+// board whose sector is larger than this.
+#define FS_BUF_BYTES 1024
 
 typedef struct {
     char name[FS_NAME_MAX];
@@ -42,10 +44,7 @@ typedef struct {
     uint32_t count;
 } fs_dir_header_t;
 
-static union {
-    uint8_t bytes[FS_SCRATCH_BYTES];
-    fs_entry_t entries[FS_SCRATCH_BYTES / sizeof(fs_entry_t)];
-} g_scratch;
+static uint8_t g_buf[FS_BUF_BYTES];
 
 static const fs_hw_t *g_hw;
 static uint32_t g_dir_sector;
@@ -83,14 +82,10 @@ static void remove_at(int idx) {
     g_entry_count--;
 }
 
-static bool dir_read_sector(uint32_t sector, fs_dir_header_t *hdr, fs_entry_t *entries) {
-    uint32_t base = sector * g_hw->sector_size;
-    if (!g_hw->read(base, (uint8_t *)hdr, sizeof(*hdr))) return false;
-    if (hdr->magic != FS_DIR_MAGIC) return false;
-    if (hdr->count > FS_MAX_FILES) return false;
-    if (hdr->count == 0) return true;
-    return g_hw->read(base + sizeof(*hdr), (uint8_t *)entries,
-                       hdr->count * sizeof(fs_entry_t));
+// Valid directory header in `sector`, or false.
+static bool dir_header(uint32_t sector, fs_dir_header_t *hdr) {
+    if (!g_hw->read(sector * g_hw->sector_size, (uint8_t *)hdr, sizeof(*hdr))) return false;
+    return hdr->magic == FS_DIR_MAGIC && hdr->count <= FS_MAX_FILES;
 }
 
 // Erases whichever directory sector isn't current and writes the new
@@ -114,28 +109,43 @@ static bool dir_persist(void) {
     return true;
 }
 
+// The tail is the first erased byte after the last programmed one, never less
+// than where it already is. Not just the end of the last live file: a deleted
+// file at the end of the log leaves programmed bytes behind, and so does a
+// write that failed partway; writing over either is not possible in flash.
+static void scan_tail(void) {
+    for (uint32_t i = data_region_size(); i > g_write_ptr; i--) {
+        uint8_t b;
+        if (!g_hw->read(data_region_start() + i - 1, &b, 1)) return;
+        if (b != 0xFF) { g_write_ptr = i; return; }
+    }
+}
+
 static bool mount(void) {
     fs_dir_header_t hdr_a, hdr_b;
-    bool valid_a = dir_read_sector(FS_DIR_SECTOR_A, &hdr_a, g_entries);
-    bool valid_b = dir_read_sector(FS_DIR_SECTOR_B, &hdr_b, g_scratch.entries);
+    bool valid_a = dir_header(FS_DIR_SECTOR_A, &hdr_a);
+    bool valid_b = dir_header(FS_DIR_SECTOR_B, &hdr_b);
     if (!valid_a && !valid_b) return false;
 
-    if (valid_b && (!valid_a || hdr_b.generation > hdr_a.generation)) {
-        memcpy(g_entries, g_scratch.entries, hdr_b.count * sizeof(fs_entry_t));
-        g_dir_sector = FS_DIR_SECTOR_B;
-        g_generation = hdr_b.generation;
-        g_entry_count = hdr_b.count;
-    } else {
-        g_dir_sector = FS_DIR_SECTOR_A;
-        g_generation = hdr_a.generation;
-        g_entry_count = hdr_a.count;
+    bool use_b = valid_b && (!valid_a || hdr_b.generation > hdr_a.generation);
+    const fs_dir_header_t *hdr = use_b ? &hdr_b : &hdr_a;
+    uint32_t sector = use_b ? FS_DIR_SECTOR_B : FS_DIR_SECTOR_A;
+
+    if (hdr->count > 0 &&
+        !g_hw->read(sector * g_hw->sector_size + sizeof(*hdr), (uint8_t *)g_entries,
+                    hdr->count * sizeof(fs_entry_t))) {
+        return false;
     }
+    g_dir_sector = sector;
+    g_generation = hdr->generation;
+    g_entry_count = hdr->count;
 
     g_write_ptr = 0;
     for (uint32_t i = 0; i < g_entry_count; i++) {
         uint32_t end = g_entries[i].offset + g_entries[i].length;
         if (end > g_write_ptr) g_write_ptr = end;
     }
+    scan_tail();
     return true;
 }
 
@@ -158,8 +168,8 @@ void fs_bind_hw(const fs_hw_t *hw) {
         g_hw = NULL;
         return;
     }
-    if (data_region_size() > FS_SCRATCH_BYTES) {
-        print("nanofs: data region exceeds FS_SCRATCH_BYTES"); printCr();
+    if (g_hw->sector_size > FS_BUF_BYTES) {
+        print("nanofs: sector exceeds FS_BUF_BYTES"); printCr();
         g_hw = NULL;
         return;
     }
@@ -169,44 +179,75 @@ void fs_bind_hw(const fs_hw_t *hw) {
     }
 }
 
-// Buffers every live file's bytes in RAM, erases the whole data region,
-// and repacks them from offset 0 — avoids any in-place overlap between
-// reading old data and writing the compacted copy.
+// Repacks the live data from offset 0, one destination sector at a time.
+//
+// Live regions are taken in ascending source order and packed end to end, so
+// every byte moves to an offset <= where it came from. Building destination
+// sector d therefore reads only source bytes at offsets >= d * sector, in
+// sectors that have not been erased yet; d is erased and rewritten only after
+// its contents are staged in g_buf. Entries that share bytes (fs_copy) are one
+// region, so packing never needs more room than the source held.
 static bool compact(void) {
-    uint32_t total = 0;
-    uint32_t new_offsets[FS_MAX_FILES];
+    uint32_t ss = g_hw->sector_size;
+
+    // Entry indices ordered by source offset, longer first on a tie so a
+    // shorter entry that shares its start (an fs_copy of a file that was later
+    // extended in place) comes after the region that contains it.
+    uint8_t order[FS_MAX_FILES];
     for (uint32_t i = 0; i < g_entry_count; i++) {
-        if (!g_hw->read(data_region_start() + g_entries[i].offset,
-                         g_scratch.bytes + total, g_entries[i].length)) {
-            return false;
+        uint32_t j = i;
+        while (j) {
+            const fs_entry_t *p = &g_entries[order[j - 1]], *e = &g_entries[i];
+            if (p->offset < e->offset || (p->offset == e->offset && p->length >= e->length)) break;
+            order[j] = order[j - 1]; j--;
         }
-        new_offsets[i] = total;
-        total += g_entries[i].length;
+        order[j] = (uint8_t)i;
     }
 
-    for (uint32_t s = FS_DATA_START_SECTOR; s < g_hw->sector_count; s++) {
+    // Unique regions and their new offsets. An entry that lies inside the
+    // previous region is part of it (same bytes), not a second copy.
+    uint32_t src[FS_MAX_FILES], len[FS_MAX_FILES], dst[FS_MAX_FILES];
+    uint32_t nreg = 0, total = 0;
+    uint32_t new_offset[FS_MAX_FILES];
+    for (uint32_t k = 0; k < g_entry_count; k++) {
+        const fs_entry_t *e = &g_entries[order[k]];
+        if (nreg && e->offset >= src[nreg - 1] &&
+            e->offset + e->length <= src[nreg - 1] + len[nreg - 1]) {
+            new_offset[order[k]] = dst[nreg - 1] + (e->offset - src[nreg - 1]);
+            continue;
+        }
+        src[nreg] = e->offset; len[nreg] = e->length; dst[nreg] = total;
+        new_offset[order[k]] = total;
+        total += e->length;
+        nreg++;
+    }
+    // The staging scheme needs every byte to move down (or stay). Damaged or
+    // unexpected directory contents could break that: refuse before erasing.
+    for (uint32_t r = 0; r < nreg; r++)
+        if (dst[r] > src[r]) return false;
+
+    uint32_t dest_sectors = (total + ss - 1) / ss;
+    for (uint32_t d = 0; d < dest_sectors; d++) {
+        uint32_t lo = d * ss;
+        uint32_t hi = (total < lo + ss) ? total : lo + ss;       // dest range [lo, hi)
+        for (uint32_t r = 0; r < nreg; r++) {
+            uint32_t r_lo = dst[r], r_hi = dst[r] + len[r];
+            uint32_t from = r_lo > lo ? r_lo : lo;
+            uint32_t to   = r_hi < hi ? r_hi : hi;
+            if (from >= to) continue;
+            if (!g_hw->read(data_region_start() + src[r] + (from - r_lo), g_buf + (from - lo), to - from))
+                return false;
+        }
+        if (!g_hw->erase_sector(FS_DATA_START_SECTOR + d)) return false;
+        if (!g_hw->write(data_region_start() + lo, g_buf, hi - lo)) return false;
+    }
+    for (uint32_t s = FS_DATA_START_SECTOR + dest_sectors; s < g_hw->sector_count; s++) {
         if (!g_hw->erase_sector(s)) return false;
     }
-    if (total > 0 && !g_hw->write(data_region_start(), g_scratch.bytes, total)) return false;
 
-    for (uint32_t i = 0; i < g_entry_count; i++) g_entries[i].offset = new_offsets[i];
+    for (uint32_t i = 0; i < g_entry_count; i++) g_entries[i].offset = new_offset[i];
     g_write_ptr = total;
-    return true;
-}
-
-// Appends content to the data log at the current tail, compacting once if
-// it doesn't fit. Returns the offset it was written at.
-static bool log_write(const uint8_t *content, uint32_t len, uint32_t *out_offset) {
-    if (g_write_ptr + len > data_region_size()) {
-        if (!compact() || g_write_ptr + len > data_region_size()) {
-            print("nanofs: no space"); printCr();
-            return false;
-        }
-    }
-    if (!g_hw->write(data_region_start() + g_write_ptr, content, len)) return false;
-    *out_offset = g_write_ptr;
-    g_write_ptr += len;
-    return true;
+    return dir_persist();
 }
 
 void fs_list(void) {
@@ -289,9 +330,10 @@ bool fs_append_line(const char *name, const char *text) {
     // (see parse_keyq()'s CRETURN case) — fs_run() feeds these bytes
     // through keyIn() as if typed, so without '\r' a stored line would
     // never actually execute, just concatenate into the next one.
-    uint32_t new_len = old_len + text_len + 2; // +2 for the trailing "\r\n"
+    uint32_t add = text_len + 2;                 // +2 for the trailing "\r\n"
+    uint32_t new_len = old_len + add;
 
-    if (new_len > FS_SCRATCH_BYTES) {
+    if (new_len > data_region_size()) {
         print("nanofs: file too large"); printCr();
         return false;
     }
@@ -300,16 +342,49 @@ bool fs_append_line(const char *name, const char *text) {
         return false;
     }
 
-    if (old_len > 0 &&
-        !g_hw->read(data_region_start() + g_entries[idx].offset, g_scratch.bytes, old_len)) {
-        return false;
-    }
-    memcpy(g_scratch.bytes + old_len, text, text_len);
-    g_scratch.bytes[old_len + text_len] = '\r';
-    g_scratch.bytes[old_len + text_len + 1] = '\n';
+    // A file that is the last thing in the log grows in place: only the new
+    // bytes are written. Anything sharing its old bytes (fs_copy) keeps its own
+    // shorter length, so it still sees exactly what it did before.
+    bool at_tail = old_len > 0 && g_entries[idx].offset + old_len == g_write_ptr;
+    uint32_t need = at_tail ? add : new_len;
 
-    uint32_t new_offset;
-    if (!log_write(g_scratch.bytes, new_len, &new_offset)) return false;
+    if (g_write_ptr + need > data_region_size()) {
+        if (!compact()) return false;
+        at_tail = old_len > 0 && g_entries[idx].offset + old_len == g_write_ptr;
+        need = at_tail ? add : new_len;
+        if (g_write_ptr + need > data_region_size()) {
+            print("nanofs: no space"); printCr();
+            return false;
+        }
+    }
+
+    uint32_t base = data_region_start();
+    uint32_t new_offset = at_tail ? g_entries[idx].offset : g_write_ptr;
+    uint32_t at = g_write_ptr;                   // where the next byte goes
+
+    if (!at_tail) {                              // copy the old content to the tail, in chunks
+        for (uint32_t done = 0; done < old_len; ) {
+            uint32_t n = old_len - done;
+            if (n > FS_BUF_BYTES) n = FS_BUF_BYTES;
+            if (!g_hw->read(base + g_entries[idx].offset + done, g_buf, n)) return false;
+            if (!g_hw->write(base + at, g_buf, n)) { scan_tail(); return false; }
+            done += n; at += n;
+        }
+    }
+    // The new text and its line ending go out through RAM (g_buf): the flash
+    // driver will not program from code flash above 128 KB, and callers pass
+    // string literals as readily as buffers.
+    for (uint32_t done = 0; done < text_len; ) {
+        uint32_t n = text_len - done;
+        if (n > FS_BUF_BYTES) n = FS_BUF_BYTES;
+        memcpy(g_buf, text + done, n);
+        if (!g_hw->write(base + at, g_buf, n)) { scan_tail(); return false; }
+        done += n; at += n;
+    }
+    g_buf[0] = '\r'; g_buf[1] = '\n';
+    if (!g_hw->write(base + at, g_buf, 2)) { scan_tail(); return false; }
+    at += 2;
+    g_write_ptr = at;
 
     if (idx < 0) {
         idx = (int)g_entry_count++;

@@ -45,7 +45,9 @@
 #define WC_SAMPLE_US    250U      // delay after a window opens before sampling
 #define WC_MEASURE_MS  2000U      // give up on a step that yields too few samples
 #define WC_MIN_ON_MA     20U      // below this while on: no wire, or an open circuit
-#define WC_MAX_ON_MA    450U      // wires draw up to 350 mA at 10 V; above this: a short or the wrong wire
+#define WC_MAX_ON_MA   1000U      // peak while a window is open (a 350 mA-rated wire pulses ~700 mA at 21 V);
+                                  // above this: a short (21 V into ~1 ohm is ~20 A) or the wrong wire
+#define WC_MAX_AVG_MA   250U      // stop the ramp when peak x duty reaches this: under the wire's 350 mA rating
 #define WC_MAX_POINTS    40U
 
 // Duty (tenths of a percent of the frame) per percent of activation while one
@@ -61,6 +63,9 @@ typedef struct {
     // Resistance between the wire and ground that is not the wire, milliohm:
     // sense resistor + MOSFET on-resistance + wiring.
     uint32_t series_mohm;
+    // Optional, for diagnostics: the mV on each analog tap right now, in the
+    // order A0, A1, A2, A3 (NULL if the board has no such view).
+    void (*taps)(uint32_t mv[4]);
 } wirecal_hw_t;
 
 void wirecal_bind_hw(const wirecal_hw_t *hw);
@@ -76,5 +81,7 @@ void wirecal_cli(void);          // ( muscle -- )  wirecal
 void wirecal_cli_stop(void);     // ( -- )         wirecal-stop
 void wirecal_cli_show(void);     // ( -- )         wires
 void wirecal_cli_set(void);      // ( muscle rcold onset mid full -- )  wire!
+void wirecal_cli_scope(void);    // ( muscle -- )  scope: ADC readings across one pulse of that wire
+void wirecal_cli_isns(void);     // ( -- )         isns: what the sense taps read while the wires pulse
 
 #endif

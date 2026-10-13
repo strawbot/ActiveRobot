@@ -25,6 +25,12 @@ typedef struct {
     void (*ser)(bool level);
     void (*srclk)(bool level);
     void (*rclk)(bool level);
+    // Optional fast paths, used from an interrupt (NULL = build them from the
+    // pin hooks above, which is slower). shift() clocks the whole chain in,
+    // last chip first, with no latch; bytes[0] is chip 0. strobe() is one
+    // RCLK pulse.
+    void (*shift)(const uint8_t *bytes, uint8_t chips);
+    void (*strobe)(void);
 } sr595_hw_t;
 
 // sr595_bind_hw — call once, before sr595_init().
@@ -45,8 +51,24 @@ bool sr595_set_bits(uint8_t chip, uint8_t mask, bool on);
 // sr595_get — chip's shadow byte (0 if out of range).
 uint8_t sr595_get(uint8_t chip);
 
-// sr595_latch — shift the shadow out and pulse RCLK. Blocking, but short
-// (8 clocks per chip, no delays).
+// sr595_all_off — shift zeros through the whole chain and latch them, using
+// only the bound pin hooks: no scheduler, no shadow bookkeeping, callable from
+// a fault handler or system_failure(). Does nothing if no hardware is bound.
+void sr595_all_off(void);
+
+// ISR-safe pieces, for a timer interrupt that pre-shifts the next pattern and
+// then latches it at an exact time. mask bit (8 * chip + bit) drives output
+// `bit` of `chip`. None of these take locks or call the scheduler.
+void sr595_shift_mask(uint32_t mask);    // clock mask into the chain; outputs do not change
+void sr595_strobe(void);                 // RCLK pulse: the shifted pattern appears on the outputs
+void sr595_note_latched(uint32_t mask);  // keep the shadow bytes in step after a strobe
+
+// sr595_take_dirty — true once after sr595_latch() has run (it reshuffles the
+// shift register), so a caller that pre-shifts knows to shift again.
+bool sr595_take_dirty(void);
+
+// sr595_latch — shift the shadow out and pulse RCLK, with interrupts masked so
+// a timer ISR cannot interleave its own shifting. Blocking, but short.
 void sr595_latch(void);
 
 // CLI words
